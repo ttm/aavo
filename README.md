@@ -259,6 +259,9 @@ po = p.rdf.ns.po # Participation Ontology
 triples = [(aa.AudiovisualAnalytics, a, skos
 ]
 
+# notes
+- Olho mágico para visualizações.
+- DoIn sonoro e sons binaurais para audio de acompanhamento.
 
 # Interface
 The interface uses Data, Analysis and Visualization
