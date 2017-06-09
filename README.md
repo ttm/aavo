@@ -1,16 +1,69 @@
-# Audiovisual analytics vocabulary and ontology
+# audiovisual analytics vocabulary and ontology
 
 # Implementation details
 Each concept is related both to an OWL class and a SKOS
-concept for [allowing DL inference to be made in the ontology][1].
+concept for [allowing OWL DL inference to be made in the ontology][1].
+Otherwise it is OWL Full.
 
 The conceptualization is formalized in OWL (as an ontology)
 from which the SKOS vocabulary is automatically derived.
-(SKOS is less formal then OWL).
+SKOS is less formal then OWL so a small set of conventions
+allows the percolate to output the vocabulary
+from ontology.
 
 The ontology rdf/visualAnalytics.owl is synthesized by the src/ontology.py file.
 The vocabulary rdf/visualAnalytics.skos is then obtained from rdf/visualAnalytics.owl
 by means of src/vocabulary.py.
+
+Visualization of RDF code involves:
+* multiple RDF text formats (Turtle, n3, Manchester, XML, etc).
+* diagram view (nodes are classes or concepts or raw data).
+* Tree view for the relations.
+
+Processing of data in the SparQL endpoint:
+* for data selection
+* for processing which can take advantage of the data types.
+* for minimizing the transfered data.
+* for avoiding overload in the python server data processing.
+
+Processing in the Python server:
+* Python Server is a Software As a Server?
+* Optimized numerical routines in numpy and scipy (BLAS, Fortran).
+* Should minimize the effort of the client processing,
+which runs Javascript and has to deal with the audiovisual rendering of data and user interface.
+* Serving JavaScript for the user interface.
+* Data IO to both the interface and the SparQL endpoint.
+* Process each request in a different thread. Use multithreading when suitable for one request.
+
+Processing in Javascript:
+* Requests to Python any measurements and data
+  - Python keeps track of the data and writes measures (all?) as new data into SparQL endpoint.
+* Should render images and audio from data received from Python server.
+  - Audio playback: Mozart, Aphex Twin, web radio, audio from soundcloud, archive.org or youtube (librevox?)
+  - Play audiofiles received from server
+  - Render audio from arbitrary data
+* Allow for setting interface from audio signals (e.g. from mic or audio file).
+* Should manage the user interface.
+* Should keep the state of the aa session.
+* Will be done in the client (no node.js).
+* Should allow one to download images, tables, audio and state files.
+* Should enable the user to:
+  - link data to methods of visualization and analysis.
+  - keep a tree of current sessions, with easy forking capabilities.
+  - change settings of visualizations and analysis in interactive/real time.
+  - Instantiate data items from sparql queries (LOSD, DBPedia), data world or uploaded files.
+
+Relate AA vocabulary to wordnet ASAP.
+Maybe start from this linking to wordnet and DBPedia and LOSD
+and then grow from them.
+
+Adicionar o void:sparqlQuery "select ?s where ...".
+Propor o acréscimo p mantenedores do VOID.
+
+
+
+
+
 
 Each OWL class and property is a subclass of SKOS skos:Concept.
 subClassOf and subProperty of are subProperties of skos:broader.
@@ -168,7 +221,7 @@ a interface visual serve para:
 
 Each visualization, datatype or analysis method has a standard visualization interface.
 
-# Concept: Visualization Interface
+# Concept: Interface
 # # narrower: Analysis, Visualization, Datatype, Widget
 
 # Concept: Analysis
@@ -207,6 +260,15 @@ triples = [(aa.AudiovisualAnalytics, a, skos
 ]
 
 
+# Interface
+The interface uses Data, Analysis and Visualization
+compatibilities for rendering itself.
+An interface might be related to them by:
+- dedicatedInterfaceOf
+- possibleInterfaceOf
+- isInterfaceOf
+
+An interface has sessions, which are subInterfaces (?).
 
 # Data, Analysis and Visualization compatibility
 
