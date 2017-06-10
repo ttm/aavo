@@ -134,7 +134,7 @@ or a model-driven transformation][1].
 
 [1]: https://www.w3.org/2006/07/SWD/SKOS/skos-and-owl/master.html
 
-# drafts in mixed Portuguese and English:
+# drafts in English:
 Should include subfields like data visualization,
 information and scientific visualization,
 HCI, visual design, UI.
@@ -143,7 +143,7 @@ senses, at least hearing
 (for the blind to have information of the visual environment,
 such as location and colors. Michel Hospital (FEE/UFSCar).
 
-# drafts in Portuguese
+# drafts in a English and Portuguese mix
 Há intuitos menores do AAVO:
   * permitir consulta e rápida assimilação de aspectos da analítica audiovisual
   tanto para o especialista quanto para outros interessados.
