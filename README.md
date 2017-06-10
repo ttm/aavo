@@ -17,7 +17,7 @@ and ontologies (e.g. DBpedia and Wordnet).
 AAVO systematizes the knowledge involved in AA
 and gives context by relations to external vocabularies and ontologies.
 
-Check the documentation in this README.md and in the [][wiki]
+Check the documentation in this README.md and in the [wiki](https://github.com/ttm/aavo/wiki/notes-on-the-audiovisual-analytics-framework)
 for further directions on how AAVO is being implemented.
 
 # intended use
@@ -124,7 +124,7 @@ and inherited by the concept.
   The first approach leads to better defined ontological structures while the second might involve in simples structures and less coding (an maybe to less clear and less clean comments).
   * How to map OWL meronyms to SKOS?
 
-# Issues
+# issues
 * Find the [difference between using an inference process
 or a model-driven transformation][1].
 * Find the difference between skos Collection and Concept Scheme.
