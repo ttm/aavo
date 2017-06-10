@@ -250,15 +250,13 @@ Visualization and ?DataTypeX are classes/concepts.
 - Visualization and Visualization:
 The Visualization output might be compatible
 with another visualization's input.
-
 Other relation among visualizations
 are if they are often used for the same type of
 analysis or data.
 
-- Analysis and Analysis
+- Analysis and Analysis:
 An analysis output might be compatible with
 another analysis's input.
-
 Other relation among analysis methods
 are if they are often used for the same type of
 data or visualization.
@@ -267,7 +265,6 @@ data or visualization.
 Data can always be merged together.
 They are said compatible if their datatypes
 match.
-
 Other relations among data types and instances
 are if they are often used for the same type of
 analysis or visualization.
