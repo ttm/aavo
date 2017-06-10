@@ -24,7 +24,7 @@ sp = p.rdf.ns.sp
 # ISSUES: TTM
 # - When to use class and property from OWL, RDFS and RDF?
 # - What really does rdf:type entails? When is the subject an instance/individual?
-# - Where should void, dq and 
+# - Where should void, dq or other data-related ontologies be used?
 # - read https://www.w3.org/DesignIssues/
 # - Directions on when to use new definitions or use external URIs (i.e. use the mapping based approach)? Prov-O avoids the mappeing solution to enhance precision of definitions even when concepts are potentially equivalent.
 # - A graph should be described by which RDF structures?
@@ -60,7 +60,6 @@ sp = p.rdf.ns.sp
 # # # - Important visualizations and interfaces for presenting and deepening results
 # # # - Other data, analyses and visualizations that can enhance results
 
-# - Understand Pandas, Sympy and other python data-related libraries.
 
 
 # - Javascript interface should focus in d3.js
@@ -137,12 +136,16 @@ triples = [
         (aao.PCA, rdfs.isDefinedBy, db),
         (aao.PCA, rdfs.isDefinedBy, aa),
         (aao.DistributionComparison, rdfs.isDefinedBy, aao),
-        (aao.KolmogorovSmirnovTest, rdfs.isDefinedBy, aao)
-        (aao.ErdosSectorialization, rdfs.isDefinedBy, aao)
-        (aao.CurveFitting, rdfs.isDefinedBy, aao)
-        (aao.Visualization, rdfs.isDefinedBy, aao)
-        (aao.Analysis, rdfs.isDefinedBy, aao)
-        (aao.Analysis, rdfs.isDefinedBy, aao)
+        (aao.KolmogorovSmirnovTest, rdfs.isDefinedBy, aao),
+        (aao.ErdosSectorialization, rdfs.isDefinedBy, aao),
+        (aao.CurveFitting, rdfs.isDefinedBy, aao),
+        (aao.Visualization, rdfs.isDefinedBy, aao),
+        (aao.Analysis, rdfs.isDefinedBy, aao),
+        (aao.Analysis, rdfs.isDefinedBy, aao),
+        (void:sparqlQuery, rdfs.isDefinedBy, aao),
+        (void:sparqlQuery, rdfs.range, xsd.string),
+        (void:sparqlQuery, rdfs.domain, void.Dataset),
+        (void:sparqlQuery, aao.exampleUsage, "select ?s where ..."),
 ]
 
 # each aao class should link to aav concept by the triple:
