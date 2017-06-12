@@ -14,7 +14,7 @@ visual interfaces.
 Therefore, AAVO should strive to use already existing vocabularies
 and ontologies (e.g. DBpedia and Wordnet).
 
-AAVO systematizes the knowledge involved in AA
+AAVO formalizes the knowledge involved in AA
 and gives context by relations to external vocabularies and ontologies.
 
 Check the documentation in this README.md and in the [wiki](https://github.com/ttm/aavo/wiki/notes-on-the-audiovisual-analytics-framework)
@@ -27,21 +27,28 @@ and for obtaining relations by machine inference
 Other and minor intended uses are described at the end of this README
 (includes Portuguese text for now).
 
-
-
-It is also conceived as an audiovisual analytics framework
+It is also conceived as a part of an AA framework
 in which the following components are foreseen:
-* Visuals: useful routines for generating images, videos.
-* Percolation: linked data and data analysis facilities.
-* Social/Participation/Gmane: routines for representing data
-from diverse provenance as linked data.
-* Music: routines useful for rendering sound and music.
-* AAVO: the conceptualization linked data/semantic web.
-* AAI: a gluing component for providing audiovisual analytics interfaces.
-Should include a web frontend using D3.js and ccNetViz.
+* [Social]/[Participation]/[Gmane]: routines for representing data
+from diverse provenance as linked data. (Done)
+* [Percolation]: linked data and data analysis facilities. (migrating code)
+* [Visuals]: useful routines for generating images and videos. (migrating code, WIP)
+* [Music]: routines useful for rendering sound and music. (migrating code, WIP)
+* [AAVO]: the conceptualization formalized as linked data/semantic web. (WIP)
+* [AAI]: a gluing component for providing audiovisual analytics interfaces.
+Should include a web frontend using D3.js and ccNetViz. (incipient)
 
 All implementations should be done in Python (backend)
 and Javascript (frontend).
+
+[AAI]: https://github.com/ttm/AAI
+[AAVO]: https://github.com/ttm/AAVO
+[Social]: https://github.com/ttm/social
+[Participation]: https://github.com/ttm/participation
+[Gmane]: https://github.com/ttm/gmane
+[Percolation]: https://github.com/ttm/Percolation
+[Music]: https://github.com/ttm/Music
+[Visuals]: https://github.com/ttm/visuals
 
 # implementation details
 Each concept is related both to an OWL class and a SKOS
@@ -123,6 +130,47 @@ and inherited by the concept.
   * If needed, define ontology annotation properties that can be mapped or inherited by the vocabulary. Another approach is to use textual tags in the string.
   The first approach leads to better defined ontological structures while the second might involve in simples structures and less coding (an maybe to less clear and less clean comments).
   * How to map OWL meronyms to SKOS?
+* [MOOC in semantic web][3]. Another [MOOC][8]. And [another MOOC][15].
+  - Send to Tomas and Ales: https://www.coursera.org/learn/web-semantica/lecture/A33ef/aplicaciones-en-biologia-de-la-web-semantica
+  - What are the most useful analysis and visualizations for biological and medical data? [MOOC][4], [MOOC specialization][5]. This other [MOOC specialization][6] has a Python for BioInformatics course. A [MOOC for big data and bioinformatics][7].
+  - How to combine these bio data with textual and social networks data?
+    * Search drug names in texts of social networks.
+    * What kind of bio data exhibits the same [stable patterns found in social networks][2].
+* Maybe use [EARL][13] to report on the tests performed.
+The application of analysis methods to data most yields automated results.
+Audiovisualization should require annotation by the user to yield results.
+Output EARL RDF for the user, allow for changing and adding to it.
+* Get text from Gutemberg books, DBpedia (or wikipedia pages)j.
+* Get networks from SparQL queries and from the online networks repository (find URL again to cite ).
+* Use [Content RDF][12] to represent content.
+* Understand what Google Cloud and Firebase and other services can and cannot provide.
+  - Firebase (BaaS) is a slim backend that delivers frontend. App engine (PaaS) the backend. Cloud (DaaS?) deals with massive data. Is that it?
+* Use [algorithmia][8] (AaaS?) for running algorithms?
+* Explore the open model of the semantic web (anyone can say anything about anything).
+  - Make some text about this design, what it implied for AAVO/AAI and possibilites.
+  - Make the open design of the semantic web very explicit in AAI.
+* Algorithmia post has good resources for NLP and text mining: http://blog.algorithmia.com/introduction-natural-language-processing-nlp/
+* Revisit scikit-learn, scipy, anaconda, etc. Maybe use e.g. scipy to derive ontology until it reaches DBpedia or so.
+* Study [KNIME][9] (and [book][11]) in depth to understand their approaches.
+* See with Vilson Vieira (The Grid) how to implement the dataflow in client JS.
+* [Course on ETL with KNIME!!!][10]
+* See source of KNIME to know if they use a vocabulary or ontology for organizing all the concepts.
+* Understand [RIF][14] and confirm that we do not need it for now.
+
+[2]: https://github.com/ttm/thesis/raw/master/tese-rfabbri.pdf
+[3]: https://www.coursera.org/learn/web-semantica
+[4]: https://www.coursera.org/specializations/bioinformatics
+[5]: https://www.coursera.org/learn/bioinformatics-pku/
+[6]: https://www.coursera.org/specializations/genomic-data-science
+[7]: https://www.coursera.org/learn/data-genes-medicine
+[8]: https://algorithmia.com
+[9]: https://tech.knime.org/screencasts
+[10]: https://www.knime.org/knime-introductory-course
+[11]: https://www.knime.org/knimepress/will-they-blend
+[12]: https://www.w3.org/TR/Content-in-RDF10/#namespaces
+[13]: https://www.w3.org/TR/EARL10-Schema/
+[14]: https://www.w3.org/TR/rif-fld/
+[15]: https://miriadax.net/web/semantic-web-and-linked-data
 
 # issues
 * Find the [difference between using an inference process
@@ -131,9 +179,26 @@ or a model-driven transformation][1].
 * Define the set of external properties and classes that will be used.
 * Distinguish between array and matrix?
 * What is the difference between method and technique?
+* Any better way for linking resources with properties without axioms (including range and domain) and restrictions? 
+  - One approach is to define subclasses, but it is clumsy. Ex:
+    * :Analysis should have a name, but it is not necessary.
+    * One way is to write:
+      - :analysisName rdfs:subPropertyOf dct:title . 
+      - :analysisName rdfs:domain :Analysis
+    * Now the ontology has some explicit bond between :analysis and a naming property.
+    * But this could be substituted by something like:
+      - dct:title :unrestrictiveDomain :Analysis
+      OR:
+      - :Analysis :usesProperty dct:title
+      - This approach yields less (unecessary) triples, the correct meaning and the desired non-restrictive bond between :Analysis and dct:title.
+    * Class restrictions have inference costs, add many triples and asserts a wrong meaning in this context.
+ * Revisit Curl documentation.
 
 [1]: https://www.w3.org/2006/07/SWD/SKOS/skos-and-owl/master.html
 
+# Links
+* http://demo.dbpedia-spotlight.org/ (for searching in a text for terms on DBpedia, Freebase and others)
+ 
 # drafts in English:
 Should include subfields like data visualization,
 information and scientific visualization,
@@ -178,13 +243,21 @@ Each visualization, datatype or analysis method should have a standard visualiza
   * narrower: Analysis, Visualization, Datatype, Widget
  
 - Concept: Analysis
-  * subClass: PCA, curve fitting, histogram, 1D method, 2D method, 3D method
+  * subClass: classification, regression, clustering, dimensionality reduction,
+  model selection, preprocessing, NN, GA, PCO, ACO, etc.
+  PCA, curve fitting, most probable distributions, histogram,
+  1D method, 2D method, 3D method,
+  most frequent values, most frequent sequences of values, stability measures,
+  difference measures between data items, bag of words,
+  regression, ML algs, FP-Growth, POS tagging, ensemble learning, GLM, 
   * necessaryAudiovisualization: class Visulization Interface
   * necessaryAudiovisualization: subPropertyOf skos:related
   * note: the analysis method might be tightly linked to a visualization Interface
  
 - Concept: AudioVisualization
   * subClass: 1D visualizaton, 2D visualization, 3D visualization, audio
+  * Auralization subClassOf Audiovisualization
+  * Visualization subClassOf Audiovisualization
  
 - Concept: Datatype
   * type: linked list, homogeneous and heterogeneous set, homogeneous array, heterogeneous array, dictionary with numbers or other datatypes, compound

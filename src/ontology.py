@@ -98,7 +98,6 @@ triples = [
 
 # new classes and properties for general use
 # How to give precedence to a rdf.comment over other comments? TTM
-# Any better way for linking resources with properties without axioms (including range and domain) and restrictions? TTM
 triles = [
         (pe.possibleDomain, a, rdf.Property), # any other URI already in usage by the community?
         (pe.possibleDomain, rdf.comment, "a non-restricitve version of the rdfs.domain"),
