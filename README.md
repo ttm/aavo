@@ -27,7 +27,7 @@ and for obtaining relations by machine inference
 Other and minor intended uses are described at the end of this README
 (includes Portuguese text for now).
 
-It is also conceived as a part of an AA framework
+It is also conceived as a part of an [AA][ "Audiovisual Analytics"] framework
 in which the following components are foreseen:
 * [Social]/[Participation]/[Gmane]: routines for representing data
 from diverse provenance as linked data. (Done)
