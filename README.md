@@ -192,7 +192,7 @@ They ([SPARQLES]) provide 24h updated information on endpoint availability.
 [14]: https://www.w3.org/TR/rif-fld/
 [15]: https://miriadax.net/web/semantic-web-and-linked-data
 
-# [issues](#issues)
+# [[issues|#issues]]
 * Find the [difference between using an inference process
 or a model-driven transformation][1].
 * Find the difference between skos Collection and Concept Scheme.
