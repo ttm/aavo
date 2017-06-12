@@ -38,7 +38,7 @@ from diverse provenance as linked data. (Done)
 * [AAI]: a gluing component for providing audiovisual analytics interfaces.
 Should include a web frontend using D3.js and ccNetViz. (incipient)
 
-All implementations should be done in Python (backend)
+All implementations should be in Python (backend)
 and Javascript (frontend).
 
 [AA]: https://github.com/ttm/aavo/wiki/notes-on-the-audiovisual-analytics-framework "Audiovisual Analytics"
@@ -54,28 +54,35 @@ and Javascript (frontend).
 # implementation details
 Each concept is related both to an OWL class and a SKOS
 concept for [allowing OWL DL inference to be made in the ontology][1].
-Otherwise it is OWL Full.
+This have pros and cons, but the other possibilities:
+* yields OWL Full (if a SKOS concept, and instance, is a class), or
+* annotations on instances o OWL classes, not on the classes
+(if we annotate instances of OWL classes with SKOS properties), or
+* a less formal ontology (if we went from SKOS to OWL), or
+* would extrapolate the purpose of SKOS AFAIK
+(giving enough expressive power to SKOS to achieve
+an OWL without degeneration of the conceptualization).
 
-The conceptualization is formalized in OWL (as an ontology)
+Therefore, conceptualization is formalized in OWL (as an ontology)
 from which the SKOS vocabulary is automatically derived.
 SKOS is less formal then OWL so a small set of conventions
-allows the percolate to output the vocabulary
+allows [Percolate] to output the vocabulary
 from the ontology.
 
 The ontology rdf/audiovisualAnalyticsOntology.owl is synthesized by the src/ontology.py file.
-The vocabulary rdf/audiovisualAnalytics.rdf is then obtained from rdf/audiovisualAnalytics.owl
+The vocabulary rdf/audiovisualAnalytics.skos is then obtained from rdf/audiovisualAnalytics.owl
 by means of src/vocabulary.py.
 Example usages of AAVO for reasoning and extracting knowledge
 should be in src/sparql.py.
 
-Visualization of RDF code involves:
+Visualization of RDF code:
 * multiple RDF text formats (Turtle, n3, Manchester, XML, etc).
 * diagram view (nodes are classes or concepts or raw data).
 * Tree view for the taxonomic relations.
+* These files should be in the rdf/ and img/ directories.
+* (See [VIOLA] for good online tools for visualizing OWL and data from endpoints as node-edge diagrams, but no textual visualization.)
 
-These files should be in the rdf/ and img/ directories.
-
-Notes on the implementation of the full AA framework should be in the wiki
+Notes on the implementation of the full [AA] framework should be in the [wiki]
 of this repository while other components are incipient.
 
 # conceptualization issues
@@ -157,7 +164,16 @@ Output EARL RDF for the user, allow for changing and adding to it.
 * [Course on ETL with KNIME!!!][10]
 * See source of KNIME to know if they use a vocabulary or ontology for organizing all the concepts.
 * Understand [RIF][14] and confirm that we do not need it for now.
+* [WebVOWL] for visualizing OWL ontologies online.
+It is very good. The [VOWL] project includes online querying an endpoint
+for visualizing the structure of data and other tools.
+* A list of alive SparQL endpoints [HERE].
+They ([SPARQLES]) provide 24h updated information on endpoint availability.
 
+[HERE]: http://sparqles.ai.wu.ac.at/availability
+[SPARQLES]: http://sparqles.ai.wu.ac.at/
+[VOWL}: http://vowl.visualdataweb.org/
+[WebVOWL}: http://visualdataweb.de/webvowl/#
 [2]: https://github.com/ttm/thesis/raw/master/tese-rfabbri.pdf
 [3]: https://www.coursera.org/learn/web-semantica
 [4]: https://www.coursera.org/specializations/bioinformatics
