@@ -87,7 +87,14 @@ Visualization of RDF code:
 Notes on the implementation of the full [AA] framework should be in the [wiki]
 of this repository while other components are incipient.
 
-# conceptualization issues
+### deriving the vocabulary from the ontology
+By standard, each OWL class and property is a subclass of skos:Concept.
+Both subClassOf and subPropertyOf are subProperties of skos:broader.
+OWL properties also yield skos:related.
+OWL properties can be annotated to yield vocabulary relations and not concepts.
+See [issues].
+
+# conceptualization details
 * Text and numbers are considered visualization.
 * Some analysis methods involve visualization.
   - We keep under analysis methods only what involves data processing
@@ -107,17 +114,9 @@ Core is meant to keep a very simple representation of the knowledge.
 and as SKOS concepts. Some sub classes and properties.
 * Extended also includes: knowledge from other fields such as statistics, complex networks,
 text mining, audio and music, visual design, HCI, UI, etc.
-When necessary to better account for the Visual Analytics field.
-Definition of further sub classes and properties of the main classes.
-
-# deriving the vocabulary from the ontology
-By standard, each OWL class and property is a subclass of SKOS skos:Concept.
-subClassOf and subPropertyOf are subProperties of skos:broader.
-OWL properties also yield skos:related.
-OWL properties can be annotated to yield vocabulary relations and not concepts.
-
-What should we use to yield a vocabulary with relations such as meronymy
-and hyponymy?
+When necessary to better account for the [AA] field and
+link to external OWL.
+Also includes definitions of further sub classes and properties of the main classes.
 
 # further notes
 * Maybe start from this linking to Wordnet and DBPedia and LOSD
@@ -171,11 +170,13 @@ It is very good. The [VOWL] project includes online querying an endpoint
 for visualizing the structure of data and other tools.
 * A list of alive SparQL endpoints [HERE].
 They ([SPARQLES]) provide 24h updated information on endpoint availability.
+* DBPedia [Spotlight] searching in a text for terms on DBpedia, Freebase and others
 
+[Spotlight]: http://demo.dbpedia-spotlight.org/
 [HERE]: http://sparqles.ai.wu.ac.at/availability
 [SPARQLES]: http://sparqles.ai.wu.ac.at/
-[VOWL}: http://vowl.visualdataweb.org/
-[WebVOWL}: http://visualdataweb.de/webvowl/#
+[VOWL]: http://vowl.visualdataweb.org/
+[WebVOWL]: http://visualdataweb.de/webvowl/#
 [2]: https://github.com/ttm/thesis/raw/master/tese-rfabbri.pdf
 [3]: https://www.coursera.org/learn/web-semantica
 [4]: https://www.coursera.org/specializations/bioinformatics
@@ -212,11 +213,11 @@ or a model-driven transformation][1].
       - This approach yields less (unecessary) triples, the correct meaning and the desired non-restrictive bond between :Analysis and dct:title.
     * Class restrictions have inference costs, add many triples and asserts a wrong meaning in this context.
  * Revisit Curl documentation.
+* What should we use to yield a SKOS with relations such as meronymy and hyponymy (which is related to OWL sub and super classes)?
+
 
 [1]: https://www.w3.org/2006/07/SWD/SKOS/skos-and-owl/master.html
 
-# Links
-* http://demo.dbpedia-spotlight.org/ (for searching in a text for terms on DBpedia, Freebase and others)
  
 # drafts in English:
 Should include subfields like data visualization,
