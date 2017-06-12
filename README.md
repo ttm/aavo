@@ -192,6 +192,7 @@ They ([SPARQLES]) provide 24h updated information on endpoint availability.
 [14]: https://www.w3.org/TR/rif-fld/
 [15]: https://miriadax.net/web/semantic-web-and-linked-data
 
+<a name="issues"></a>
 #issues
 * Find the [difference between using an inference process
 or a model-driven transformation][1].
