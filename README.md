@@ -92,7 +92,7 @@ By standard, each OWL class and property is a subclass of skos:Concept.
 Both subClassOf and subPropertyOf are subProperties of skos:broader.
 OWL properties also yield skos:related.
 OWL properties can be annotated to yield vocabulary relations and not concepts.
-See [issues].
+See [issues](#issues).
 
 # conceptualization details
 * Text and numbers are considered visualization.
@@ -192,7 +192,7 @@ They ([SPARQLES]) provide 24h updated information on endpoint availability.
 [14]: https://www.w3.org/TR/rif-fld/
 [15]: https://miriadax.net/web/semantic-web-and-linked-data
 
-[issues](#issues)
+#issues
 * Find the [difference between using an inference process
 or a model-driven transformation][1].
 * Find the difference between skos Collection and Concept Scheme.
