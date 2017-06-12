@@ -17,8 +17,10 @@ and ontologies (e.g. DBpedia and Wordnet).
 AAVO formalizes the knowledge involved in AA
 and gives context by relations to external vocabularies and ontologies.
 
-Check the documentation in this README.md and in the [wiki](https://github.com/ttm/aavo/wiki/notes-on-the-audiovisual-analytics-framework)
+Check the documentation in this README.md and in the [wiki]
 for further directions on how AAVO is being implemented.
+
+[wiki]: https://github.com/ttm/aavo/wiki/notes-on-the-audiovisual-analytics-framework
 
 # intended use
 AAVO is intended for conceptual organization and discussion
