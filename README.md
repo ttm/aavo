@@ -27,7 +27,7 @@ and for obtaining relations by machine inference
 Other and minor intended uses are described at the end of this README
 (includes Portuguese text for now).
 
-It is also conceived as a part of an ![AA]( "Audiovisual Analytics") framework
+It is also conceived as a part of an [AA] framework
 in which the following components are foreseen:
 * [Social]/[Participation]/[Gmane]: routines for representing data
 from diverse provenance as linked data. (Done)
@@ -41,6 +41,7 @@ Should include a web frontend using D3.js and ccNetViz. (incipient)
 All implementations should be done in Python (backend)
 and Javascript (frontend).
 
+[AA]: https://github.com/ttm/aavo/wiki/notes-on-the-audiovisual-analytics-framework "Audiovisual Analytics"
 [AAI]: https://github.com/ttm/AAI
 [AAVO]: https://github.com/ttm/AAVO
 [Social]: https://github.com/ttm/social
