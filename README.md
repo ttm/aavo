@@ -42,14 +42,14 @@ All implementations should be done in Python (backend)
 and Javascript (frontend).
 
 [AA]: https://github.com/ttm/aavo/wiki/notes-on-the-audiovisual-analytics-framework "Audiovisual Analytics"
-[AAI]: https://github.com/ttm/AAI
-[AAVO]: https://github.com/ttm/AAVO
-[Social]: https://github.com/ttm/social
-[Participation]: https://github.com/ttm/participation
-[Gmane]: https://github.com/ttm/gmane
-[Percolation]: https://github.com/ttm/Percolation
-[Music]: https://github.com/ttm/Music
-[Visuals]: https://github.com/ttm/visuals
+[AAI]: https://github.com/ttm/AAI "Audiovisual Analytics Interface"
+[AAVO]: https://github.com/ttm/AAVO "Audiovisual Vocabulary and Ontology"
+[Social]: https://github.com/ttm/social "Social Python package"
+[Participation]: https://github.com/ttm/participation "Participation Python package"
+[Gmane]: https://github.com/ttm/gmane "Gmane Python package"
+[Percolation]: https://github.com/ttm/Percolation "Percolation Python package"
+[Music]: https://github.com/ttm/Music "Music Python package"
+[Visuals]: https://github.com/ttm/visuals "Visuals Python package"
 
 # implementation details
 Each concept is related both to an OWL class and a SKOS
