@@ -1,4 +1,4 @@
-# audiovisual analytics vocabulary and ontology (AAVO)
+# audiovisual analytics vocabulary and ontology ([AAVO])
 This repository holds:
 * a SKOS vocabulary;
 * an OWL ontology;
@@ -11,19 +11,19 @@ to encompass both visualizing and hearing data.
 It is a broad subject which related data structures and provenance,
 analysis techniques and methods, audiovisualization of data and
 visual interfaces.
-Therefore, AAVO should strive to use already existing vocabularies
+Therefore, [AAVO] should strive to use already existing vocabularies
 and ontologies (e.g. DBpedia and Wordnet).
 
-AAVO formalizes the knowledge involved in AA
+[AAVO] formalizes the knowledge involved in [AA]
 and gives context by relations to external vocabularies and ontologies.
 
 Check the documentation in this README.md and in the [wiki]
-for further directions on how AAVO is being implemented.
+for further directions on how [AAVO] is being implemented.
 
 [wiki]: https://github.com/ttm/aavo/wiki/notes-on-the-audiovisual-analytics-framework
 
 # intended use
-AAVO is intended for conceptual organization and discussion
+[AAVO] is intended for conceptual organization and discussion
 and for obtaining relations by machine inference
 (e.g. what analysis and visualizations might be useful for a given dataset).
 Other and minor intended uses are described at the end of this README
@@ -64,6 +64,11 @@ This have pros and cons, but the other possibilities:
 * would extrapolate the purpose of SKOS AFAIK
 (giving enough expressive power to SKOS to achieve
 an OWL without degeneration of the conceptualization).
+* One other possibility that I came across is to model a
+concept not as an instance of skos:Concept, but as a subClass of it.
+I do not know if this is ok, so it is in standby,
+but it seems like a good alternative to avoid duplicating
+concepts, e.g. aao:Analysis and aav:Analysis.
 
 Therefore, conceptualization is formalized in OWL (as an ontology)
 from which the SKOS vocabulary is automatically derived.
@@ -74,7 +79,7 @@ from the ontology.
 The ontology rdf/audiovisualAnalyticsOntology.owl is synthesized by the src/ontology.py file.
 The vocabulary rdf/audiovisualAnalytics.skos is then obtained from rdf/audiovisualAnalytics.owl
 by means of src/vocabulary.py.
-Example usages of AAVO for reasoning and extracting knowledge
+Example usages of [AAVO] for reasoning and extracting knowledge
 should be in src/sparql.py.
 
 Visualization of RDF code:
@@ -106,7 +111,7 @@ and arbitrary consultation.
   - If for an analysis technique this distinction is not possible,
   we can use the concept of (audio)visual analysis.
 
-# core and extended AAVO
+# core and extended [AAVO]
 Both the ontology and vocabulary have core and extended versions.
 Extended includes core.
 Core is meant to keep a very simple representation of the knowledge.
@@ -156,7 +161,7 @@ Output EARL RDF for the user, allow for changing and adding to it.
   - Firebase (BaaS) is a slim backend that delivers frontend. App engine (PaaS) the backend. Cloud (DaaS?) deals with massive data. Is that it?
 * Use [algorithmia][8] (AaaS?) for running algorithms?
 * Explore the open model of the semantic web (anyone can say anything about anything).
-  - Make some text about this design, what it implied for AAVO/AAI and possibilites.
+  - Make some text about this design, what it implied for [AAVO]/AAI and possibilites.
   - Make the open design of the semantic web very explicit in AAI.
 * Algorithmia post has good resources for NLP and text mining: http://blog.algorithmia.com/introduction-natural-language-processing-nlp/
 * Revisit scikit-learn, scipy, anaconda, etc. Maybe use e.g. scipy to derive ontology until it reaches DBpedia or so.
@@ -171,7 +176,9 @@ for visualizing the structure of data and other tools.
 * A list of alive SparQL endpoints [HERE].
 They ([SPARQLES]) provide 24h updated information on endpoint availability.
 * DBPedia [Spotlight] searching in a text for terms on DBpedia, Freebase and others
+* [SKOS Play] to render tree and textual interactive visualizations of SKOS vocabularies.
 
+[SKOS Play]: http://labs.sparna.fr/skos-play/
 [Spotlight]: http://demo.dbpedia-spotlight.org/
 [HERE]: http://sparqles.ai.wu.ac.at/availability
 [SPARQLES]: http://sparqles.ai.wu.ac.at/
@@ -196,7 +203,7 @@ They ([SPARQLES]) provide 24h updated information on endpoint availability.
 # issues
 * Find the [difference between using an inference process
 or a model-driven transformation][1].
-* Find the difference between skos Collection and Concept Scheme.
+* Find the difference between SKOS Collection and Concept Scheme.
 * Define the set of external properties and classes that will be used.
 * Distinguish between array and matrix?
 * What is the difference between method and technique?
@@ -230,7 +237,7 @@ senses, at least hearing
 such as location and colors. Michel Hospital (FEE/UFSCar).
 
 # drafts in a English and Portuguese mix
-Há intuitos menores do AAVO:
+Há intuitos menores do [AAVO]:
   * permitir consulta e rápida assimilação de aspectos da analítica audiovisual
   tanto para o especialista quanto para outros interessados.
   * sustentar possíveis software de analítica visual através de relações
