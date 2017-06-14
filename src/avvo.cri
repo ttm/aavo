@@ -1,0 +1,150 @@
+### Audiovisual Resource Identifier is a URI'a universal identifier.
+
+A hand written URI is a VRI.
+A hand written URI is ARI.
+A VRI is a ARI.
+
+An uri in utf8 in a representation encoding.
+
+# CRIs and the common namespace
+
+the universal namespace holds text representation
+of URIs. They are [CRI]s.
+To be encoded as such, and given possible matches.
+
+[CRI]: http://purl.org/audiovisualanalytics/cri
+
+They are also to be matched to possible URIs used
+in LD or SW. It yields:
+
+cri candidate uri
+
+CRIs are classes by standards,
+meanings things that can have sub things.
+Parts or entities.
+
+cri related cri
+
+cri is ari
+
+## text representation in triples
+Every statement is written in triples.
+This document can be written in triples
+using the markings.
+
+Writing it in triples:
+
+text topic "text representation in triples"
+It is a "semantic web" writing style and format.
+Designed to make them machine readable RDF
+documents for reasoning and linking to the web (of data mainly).
+
+Two main principles:
+* Writing in triples
+* Each of the three parts of the triple have URIs in the CRI namespace.
+
+Examples:
+
+### Parsing documents to CRI
+Any document can be parsed to the cri namespace.
+The :directive (directive) can be used to help.
+And can have links if a line starts with it.
+Headers and paragraphs and sentences can be understood as concepts.
+
+This document is in mixed cri:
+what is not in triples is discarted or used to
+yield title, paragraph existence and interelations.
+
+### Running code in the CRI namespace
+
+criParse is method
+criParse python *open(afile); l=a.readlines(); for line in l: statement=l.split(" "); statement="
+
+### Tranfering cri triples to another namespace
+cri prefix "http://purl.org/aavo/"
+
+
+aavo is owlOntology
+aavo is ontology
+
+aavo scope audiovisualAnalytics
+audiovisualAnalytics is visualAnalytics
+
+aavo semiCoreConcept analysis
+aavo core technique
+aavo coreConcept auviovisualization
+aavo coreConcept data
+aavo coreConcept interface
+aavo coreConcept method
+
+aavo semiCoreConcept visualization
+aavo semiCoreConcept sonification
+
+aavo concept method
+
+
+
+
+
+
+
+##
+
+ari documentRepresentation "the ARI Audiovisual Resource Identifier (formated by CRI)"
+cri documentRepresentation "the CRI Common Resource Identifier (formated by CRI)"
+uri documentRepresentation "the URI Universal Resource Identifier (formated by CRI)"
+
+ari extendedDocumentRepresentation "the " + ari +" "is an audiovisual significant, a cue though which a meaning is attached."
+ari paragraphRepresentation "the " + ari +" "is an audiovisual significant, a cue though which a meaning is attached."
+
+#### The thing
+thing is thing
+ari is thing
+bird is thing
+
+So a doman and range of RDF(S) is by standard:
+
+bird eats thing
+
+The thing meaning is "something" or "anything".
+
+thing meaning "something", "anything"
+
+### The CRI text document format for reading and parsing
+Consists of triples.
+Each taken by standard to have uris in the CRI namespace:
+"http://purl.org/avvo/cri".
+
+
+
+
+
+Example use. It also has a CRI prefix:
+
+uri encoded uri:utf8
+uri text "cry:uri'
+uri fulURIText "http://purl.org/audiovisualanalytics/cry/URI'
+uri definedBy "http://purl.org/audiovisualanalytics/cry'
+
+uri type cri
+
+
+
+### PRI
+A PRI is a type of CRI, which is valid only in the namespace of the writer.
+It can be switched by the #personal command.
+
+A cri which matches with a name of person can
+be parsed to be a pri.
+
+A cri that doesn't match a word in a vocabulary or in a language
+can be parsed to be a pri.
+It should always separate tokens in camel case before matching the vocabulary.
+
+# 
+
+
+
+
+
+

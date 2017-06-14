@@ -73,7 +73,7 @@ concepts, e.g. aao:Analysis and aav:Analysis.
 Therefore, conceptualization is formalized in OWL (as an ontology)
 from which the SKOS vocabulary is automatically derived.
 SKOS is less formal then OWL so a small set of conventions
-allows [Percolate] to output the vocabulary
+allows [Percolation] to output the vocabulary
 from the ontology.
 
 The ontology rdf/audiovisualAnalyticsOntology.owl is synthesized by the src/ontology.py file.
@@ -87,7 +87,7 @@ Visualization of RDF code:
 * diagram view (nodes are classes or concepts or raw data).
 * Tree view for the taxonomic relations.
 * These files should be in the rdf/ and img/ directories.
-* (See [VIOLA] for good online tools for visualizing OWL and data from endpoints as node-edge diagrams, but no textual visualization.)
+* (See [VOWL] for good online tools for visualizing OWL and data from endpoints as node-edge diagrams, but no textual visualization.)
 
 Notes on the implementation of the full [AA] framework should be in the [wiki]
 of this repository while other components are incipient.
@@ -177,6 +177,8 @@ for visualizing the structure of data and other tools.
 They ([SPARQLES]) provide 24h updated information on endpoint availability.
 * DBPedia [Spotlight] searching in a text for terms on DBpedia, Freebase and others
 * [SKOS Play] to render tree and textual interactive visualizations of SKOS vocabularies.
+* Maybe write an auxiliary ontology about semantic web fundamentals:
+RDF, RDFS, SKOS, OWL, RIF, SparQL etc.
 
 [SKOS Play]: http://labs.sparna.fr/skos-play/
 [Spotlight]: http://demo.dbpedia-spotlight.org/

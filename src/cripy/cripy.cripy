@@ -1,0 +1,77 @@
+# this file is written in cripython and translates cripython to python
+# it should use crypy.py code to translate it into python.
+# The resulting python executable takes an cripython code and writes a python code
+
+# cripython has:
+# * bootstrap.cripy
+# * bootstrap.py which is written both directly in python and be output by boostrap.cripy
+
+# bootstrap.py takes cripy files and translates them to python
+
+# note that bootstrap.py should be directly written.
+# bootstrap.cripy is a show off which translates to bootstrap.py by bootstrap.py
+
+# bootstrap.scipy should be able to make cripy.py from cripy.cripy
+# which is a complete cripy implementation
+# I.e. cripy.cripy is the cripy parser, written in cripy,
+# which translates .cripy file to python
+
+# cripy.py is a complete implementation of the cri python flavour or laguage
+# E.g. it should be able to translate cri.cripy to cri.py
+# cri.cripy should make cri.rdf from cri.cri which can be any file
+# cri.cripy translates cripy.cri to crypy.ttl and xml
+# cri.cripy translates cripy.cripy to crypy.cripy.ttl and xml
+
+
+# cri convention extensions are removed
+# cri convention lines with more than two spaces are takens a string as the predicate.
+# cri convention handels .cri files and any file
+# cri convention  auto detects audio, image and video files.
+# cri convention auto detects text formats: python, md, etc.
+# cri convention might be able to take advantage of text format to make better RDF
+# cri convention use cripy for psudocode
+# cri convention each uri is created in a document subspace inside cri with its prefix cri/<document_filename_name/term
+# cri convention if there is a line break, it is the point from where space separated multiline statements are triples.
+# It is where from the third word on to the next lines we have a RDF string.
+
+# cri convention the first two words receive uri.
+# If there are more than three words, and if the third word is a number,
+# else it is understood as a string.
+# If there are only three words, the third word receives a uri.
+# If the third word is a python variable, just as a number or a list, it is considered a RDF variable suitable
+
+
+# thing python this predicate shold have a python code in the object
+# thing cripy this predicate shold have a cri python (cripy) code in the object
+
+
+
+rdflib, numpy # cripy convention imports when coma separated tokens not in locals() and globasl()
+
+# cri recommendation make modes for non triples format of text and tags
+
+####### code of cri.py, which translates cri files to RDF.
+# this file translate cri files to rdf
+
+# "cripy..cripy" keeps the variable
+open  # always use input variables
+
+readlines() # always searchs in the last variable if has the method
+# () is optional.
+# If has method or scalar attribute, runs method by
+# standard
+
+for line # always interate in the last created variable
+    split(";") # same as l10
+    for statement in # always operate in the last variable created
+        if "=" "for " "if " "while " not in # same as l14. in is optional
+            statement = statement +  # same as l14
+        # seach local namespace to find if has a property
+        # for local in locals() # put : on the end of for, if, while
+        # statements
+
+            
+            
+
+
+

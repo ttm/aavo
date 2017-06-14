@@ -1,0 +1,164 @@
+cri convention extensions are removed
+cri convention lines with more than two spaces are takens a string as the predicate.
+cri convention handels .cri files and any file
+cri convention auto detects audio, image and video files.
+cri convention auto detects text formats: python, md, etc.
+cri convention might be able to take advantage of text format to make better RDF
+cri convention use cripy for psudocode
+cri convention each uri is created in a document subspace inside cri with its prefix cri/<document>\_filename_name/term
+
+
+cri subProject cripy
+cripy description cripy is a python flavour as cofeescript is for javascript
+cri is rdfRepresentation
+cri uses cripy to write readable and short codes
+
+cri definition the Common Resource Identifier is the identifier of something in the cri namespace.
+A RDF format designed for short codes and a local rdf description.
+
+cri includes a protocol for translating .cri files to RDF
+cri cripy included in this cri document. Creates cri.cripy which translates .cri files to .ttl and .rdf
+cri cripy cri.cripy # the cripy 
+
+cri python 
+import sys
+def parseCri(argv):
+    """Parses cri files to rdf
+
+    Should receive [filename, criPrefix] from argv"""
+    import argparser
+    parser = argparse.ArgumentParser(
+        description = 'this file parses CRI files to RDF',
+        epilog = "Plese see cri.cri file for more information")
+    parser.add_argument("--criprefix", "a prefix cri/<given_prefix>/ to use in the uris")
+    parser.add_argument("--prefix", "a prefix to use in the uris")
+
+    text = open(sys.argv[0])
+    lines = text.read() # always searchs in the last variable if has the method
+    lines_ = text.readlines() # always searchs in the last variable if has the method
+
+    args = parser.parse_args()
+    file_prefix = False
+    if "prefix" in args:
+        prefix = parser["prefix"]
+    elif "criprefix" in args:
+        criprefix = parser["criprefix"]
+        prefix =  "http://purl.org/avvo/cri/" + criprefix + "/"
+    elif "criPrefix" in lines_: # if criprefix is defined in the cri document
+        for line in lines_:
+            triple = line.split(" ")
+            if "criPrefix" == triple(" ")[1] and len(triple) == 3:
+                criprefix = triple[2]
+                prefix =  "http://purl.org/avvo/cri/" + criprefix + "/"
+            else:
+                file_prefix = True
+    elif "prefix" in lines_: # if prefix is defined in the cri document
+        for line in lines_:
+            triple = line.split(" ")
+            if "criPrefix" == triple[1] and len(triple) == 3:
+                prefix = triple[2]
+            else:
+                file_prefix = True
+    if file_prefix:
+        criprefix = argv[0].replace(" ","") # use the filename as prefix
+        prefix =  "http://purl.org/avvo/cri/" + criprefix + "/"
+
+    for line in lines:
+        if mode = "default": # each line a triple
+            if not line:
+                mode = "block" # empty lines starts cri block mode
+                continue
+            candidates = statement.split(" ")
+            subject_uri = prefix + candidates[0]
+            predicate_uri = prefix + candidates[0]
+            triples = [(subject_uri, rdf.label, candidates[0]),
+                       (predicate_uri, rdf.label, candidates[0])]
+            if len(candidates) == 3 and not candidates[3].isnumeric():
+                object_uri = prefix + candidates[0]
+                triples.extend(
+                    (object_uri, rdf.label, object_name),
+                    (subject_uri, predicate_uri, object_uri),
+                )
+            elif len(candidates) == 3 and candidates[3].isnumeric(): # object is numerical
+                triples.append( (object_uri, predicate_uri, eval(candidates[2])) )
+            else: # object is a string
+                triples.append( (object_uri, predicate_uri, candidates[2:]) )
+            # cri should also handle other python variables as predicates: sets, tuples, lists, booleans, dictionaries
+                
+        else:
+            # multiline mode
+            # the object is always a string with candidates[2:]
+            pass
+
+cri cripy 
+# unfinished. Making python code first!!!
+# for writing rdf files from cri files
+# translates into cri.cripy and then to cri.py
+# should be able to translate this file to cri.ttl, ttl etc.
+open  # always use input variables
+readlines() # always searchs in the last variable if has the method
+# () is optional.
+# If has method or scalar attribute, runs method by
+# standard
+for # always interate in the last created variable
+    split(" ")
+    if == 3:
+        for 
+            uri = "http://purl.org/avvo/cri/"+ # creats the uri
+        keep a # keeps uri in a variable called a
+    keep b # translates to statements.append(), statements == b
+    else:
+        # see if in the triple block mode or the cripy (block) mode
+        if 
+        if mode == "cripy"
+        # scape # character: if it is ##, it is the # chars, else it is a inline comments or directive
+        if "#" in [3]:
+            [3].replace("##", "#")
+            
+        # detect title and paragraph in MD or other"
+        # seach local namespace to find if has a property
+        # for local in locals() # put : on the end of for, if, while
+        # statements
+
+else:
+    # detect title and paragraph in MD or other
+    # detect sentences, terms in other or this namespace
+    # for now, disconsider non triples
+    pass
+
+rdflib r # imports if not in locals() and globals()
+r.write(,"ttl") # uses this document'name for the resulting file
+
+# writeTriples() # creates function with variables set to Nonw
+#     for # in the first variable
+#         
+#     
+# writeTriples # applies to last variable interacted with, in this case statements
+cri convention the ## is the only reserved character, meaning "#" for cri parser. It holds comment lines or directives.
+## can be used inline and ## also closes coment with further text or triple statement
+It is not valid for cripy code subjects and is again activated after cripy statement block.
+Possible directives are
+* #md/#md- for markdown
+* #join for joining words in headlessCamelCase
+
+cri idea make a syntax highlighting of cri files. Use python for now because of cripy.
+It should be able to identify variables such as strings and numbers.
+It should color subjects, predicates and objects.
+It should display markers where there is a section beak, such as when multiline comments starts.
+
+
+
+# cri convention if there is a line break, it is the point from where space separated multiline statements are triples.
+# It is where from the third word on to the next lines we have a RDF string.
+
+
+
+# cri convention the first two words receive uri.
+# If there are more than three words, and if the third word is a number,
+# else it is understood as a string.
+# If there are only three words, the third word receives a uri.
+# If the third word is a python variable, just as a number or a list, it is considered a RDF variable suitable
+
+
+# thing python this predicate shold have a python code in the object
+# thing cripy this predicate shold have a cri python (cripy) code in the object
