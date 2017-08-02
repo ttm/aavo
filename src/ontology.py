@@ -1,22 +1,10 @@
 import nltk
 import percolation as p
 
-skos = p.rdf.NS.skos
 owl =  p.rdf.NS.owl
-rdf =  p.rdf.NS.rdf
-rdfs = p.rdf.NS.rdfs
-void = p.rdf.NS.void
 xsd =  p.rdf.NS.xsd
-# http://purl.org/audiovisualanalytics/
-aa = p.rdf.NS.aavo # Audiovisual Analytics (Ontology and Vocabulary)
-# http://purl.org/audiovisualanalytics/ontology/
 aao = p.rdf.NS.aao # Audiovisual Analytics Ontology
-# http://purl.org/audiovisualanalytics/vocabulary/
-aav = p.rdf.NS.aav # Audiovisual Analytics Vocabulary
-# http://purl.org/socialparticipation/po
-po = p.rdf.NS.po # Participation Ontology
-
-a = rdf.type
+a =  p.rdf.NS.rdf.type
 
 triples = [
         (aao.Datatype, aao.type, aao.Datatype),
@@ -74,10 +62,6 @@ import os
 path = os.path.dirname(os.path.abspath(__file__))
 path = os.path.join(path, os.pardir)
 o.render(path)
-
-
-
-
 
 # Notes:
 # * Include Audio(visualization)
