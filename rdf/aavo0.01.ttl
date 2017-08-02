@@ -1,0 +1,153 @@
+@prefix aao: <http://purl.org/audiovisualanalytics/ontology/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+aao:Animation a owl:Class ;
+    rdfs:label "Animation" ;
+    owl:subClassOf aao:VisualRepresentation .
+
+aao:Audio a owl:Class ;
+    rdfs:label "Audio" ;
+    owl:subClassOf aao:TemporalSeries .
+
+aao:Cleaning a owl:Class ;
+    rdfs:label "Cleaning" ;
+    owl:subClassOf aao:PreProcessing .
+
+aao:DynamicAvailability a owl:Class ;
+    rdfs:label "Dynamic Availability" ;
+    owl:subClassOf aao:Availability .
+
+aao:Graph a owl:Class ;
+    rdfs:label "Graph" ;
+    aao:subClassOf aao:Network .
+
+aao:HeatMap a owl:Class ;
+    rdfs:label "Heat Map" ;
+    owl:subClassOf aao:Visualization .
+
+aao:Histogram a owl:Class ;
+    rdfs:label "Histogram" ;
+    aao:suitableFor aao:StatisticalTest ;
+    owl:subClassOf aao:Visualization .
+
+aao:Image a owl:Class ;
+    rdfs:label "Image" ;
+    owl:subClassOf aao:VisualRepresentation .
+
+aao:KolmogorovSmirnovTest a owl:Class ;
+    rdfs:label "Kolmogorov Smirnov Test" ;
+    owl:subClassOf aao:StatisticalTest .
+
+aao:PCA a owl:Class ;
+    rdfs:label "PCA" ;
+    owl:subClassOf aao:MDS .
+
+aao:StaticAvailability a owl:Class ;
+    rdfs:label "Static Availability" ;
+    owl:subClassOf aao:Availability .
+
+aao:Timeline a owl:Class ;
+    rdfs:label "Timeline" ;
+    owl:subClassOf aao:ScatterPlot .
+
+aao:ZScore a owl:Class ;
+    rdfs:label "Z-Score" ;
+    owl:subClassOf aao:PreProcessing .
+
+aao:ZTest a owl:Class ;
+    rdfs:label "Z-Test" ;
+    owl:subClassOf aao:StatisticalTest .
+
+aao:availability a owl:ObjectProperty ;
+    rdfs:label "availability" .
+
+aao:input a owl:ObjectProperty ;
+    rdfs:label "input" .
+
+aao:numberOfDimensions a owl:DatatypeProperty ;
+    rdfs:label "number of dimensions" .
+
+aao:output a owl:ObjectProperty ;
+    rdfs:label "output" .
+
+aao:processes a owl:ObjectProperty ;
+    rdfs:label "processes" .
+
+aao:subClassOf a owl:ObjectProperty ;
+    rdfs:label "sub class of" .
+
+aao:suitableFor a owl:ObjectProperty ;
+    rdfs:label "suitable for" .
+
+aao:type a owl:ObjectProperty ;
+    rdfs:label "type" .
+
+aao:uses a owl:ObjectProperty ;
+    rdfs:label "uses" .
+
+owl:subClassOf a owl:ObjectProperty .
+
+aao:Network a owl:Class ;
+    rdfs:label "Network" ;
+    aao:subClassOf aao:RelationalData .
+
+aao:RelationalData a owl:Class ;
+    rdfs:label "Relational Data" ;
+    aao:subClassOf aao:Datatype .
+
+aao:ScatterPlot a owl:Class ;
+    rdfs:label "Scatter Plot" ;
+    aao:suitableFor aao:MDS ;
+    owl:subClassOf aao:Visualization .
+
+aao:TemporalSeries a owl:Class ;
+    rdfs:label "Temporal Series" ;
+    aao:subClassOf aao:Datatype .
+
+aao:MDS a owl:Class ;
+    rdfs:label "MDS" ;
+    owl:subClassOf aao:Processing .
+
+aao:PreProcessing a owl:Class ;
+    rdfs:label "Pre-Processing" ;
+    owl:subClassOf aao:Processing .
+
+aao:Availability a owl:Class ;
+    rdfs:label "Availability" .
+
+aao:StatisticalTest a owl:Class ;
+    rdfs:label "Statistical Test" ;
+    owl:subClassOf aao:Processing .
+
+aao:VisualRepresentation a owl:Class ;
+    rdfs:label "Visual Representation" .
+
+aao:Visualization a owl:Class ;
+    rdfs:label "Visualization" ;
+    aao:input aao:Data ;
+    aao:numberOfDimensions xsd:double ;
+    aao:output aao:VisualRepresentation ;
+    aao:suitableFor aao:Datatype,
+        aao:Processing ;
+    aao:uses aao:Processing .
+
+aao:Data a owl:Class ;
+    rdfs:label "Data" ;
+    aao:availability aao:Availability ;
+    aao:type aao:Datatype .
+
+aao:Processing a owl:Class ;
+    rdfs:label "Processing" ;
+    aao:input aao:Data ;
+    aao:output aao:Data ;
+    aao:processes aao:Data ;
+    aao:suitableFor aao:Datatype .
+
+aao:Datatype a owl:Class ;
+    rdfs:label "Datatype" ;
+    aao:type aao:Datatype .
+
