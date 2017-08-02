@@ -137,14 +137,13 @@ aao:Data a owl:Class ;
     aao:availability aao:Availability ;
     aao:type aao:Datatype .
 
+aao:Datatype a owl:Class ;
+    rdfs:label "Datatype" .
+
 aao:Processing a owl:Class ;
     rdfs:label "Processing" ;
     aao:input aao:Data ;
     aao:output aao:Data ;
     aao:processes aao:Data ;
     aao:suitableFor aao:Datatype .
-
-aao:Datatype a owl:Class ;
-    rdfs:label "Datatype" ;
-    aao:type aao:Datatype .
 

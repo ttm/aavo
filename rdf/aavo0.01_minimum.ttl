@@ -1,0 +1,64 @@
+@prefix aao: <http://purl.org/audiovisualanalytics/ontology/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+aao:Animation a owl:Class ;
+    rdfs:label "Animation" ;
+    owl:subClassOf aao:VisualRepresentation .
+
+aao:Image a owl:Class ;
+    rdfs:label "Image" ;
+    owl:subClassOf aao:VisualRepresentation .
+
+aao:PreProcessing a owl:Class ;
+    rdfs:label "Pre-Processing" ;
+    owl:subClassOf aao:Processing .
+
+aao:Visualization a owl:Class ;
+    rdfs:label "Visualization" ;
+    aao:input aao:Data ;
+    aao:numberOfDimensions xsd:double ;
+    aao:output aao:VisualRepresentation ;
+    aao:suitableFor aao:Datatype,
+        aao:Processing ;
+    aao:uses aao:Processing .
+
+aao:input a owl:ObjectProperty ;
+    rdfs:label "input" .
+
+aao:numberOfDimensions a owl:DatatypeProperty ;
+    rdfs:label "number of dimensions" .
+
+aao:output a owl:ObjectProperty ;
+    rdfs:label "output" .
+
+aao:suitableFor a owl:ObjectProperty ;
+    rdfs:label "suitable for" .
+
+aao:type a owl:ObjectProperty ;
+    rdfs:label "type" .
+
+aao:uses a owl:ObjectProperty ;
+    rdfs:label "uses" .
+
+owl:subClassOf a owl:ObjectProperty .
+
+aao:Data a owl:Class ;
+    rdfs:label "Data" ;
+    aao:type aao:Datatype .
+
+aao:Datatype a owl:Class ;
+    rdfs:label "Datatype" .
+
+aao:Processing a owl:Class ;
+    rdfs:label "Processing" ;
+    aao:input aao:Data ;
+    aao:output aao:Data ;
+    aao:suitableFor aao:Datatype .
+
+aao:VisualRepresentation a owl:Class ;
+    rdfs:label "Visual Representation" .
+
