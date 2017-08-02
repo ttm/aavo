@@ -5,187 +5,183 @@
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
 >
-  <rdf:Description rdf:about="http://purl.org/audiovisualanalytics/ontology/Processing">
-    <aao:suitableFor rdf:resource="http://purl.org/audiovisualanalytics/ontology/Datatype"/>
-    <rdfs:label>Processing</rdfs:label>
-    <aao:output rdf:resource="http://purl.org/audiovisualanalytics/ontology/Data"/>
-    <aao:input rdf:resource="http://purl.org/audiovisualanalytics/ontology/Data"/>
+  <rdf:Description rdf:about="http://purl.org/audiovisualanalytics/ontology/TemporalSeries">
+    <owl:subClassOf rdf:resource="http://purl.org/audiovisualanalytics/ontology/Datatype"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <aao:processes rdf:resource="http://purl.org/audiovisualanalytics/ontology/Data"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/audiovisualanalytics/ontology/RelationalData">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <aao:subClassOf rdf:resource="http://purl.org/audiovisualanalytics/ontology/Datatype"/>
-    <rdfs:label>Relational Data</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/audiovisualanalytics/ontology/MDS">
-    <owl:subClassOf rdf:resource="http://purl.org/audiovisualanalytics/ontology/Processing"/>
-    <rdfs:label>MDS</rdfs:label>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/audiovisualanalytics/ontology/Data">
-    <aao:availability rdf:resource="http://purl.org/audiovisualanalytics/ontology/Availability"/>
-    <rdfs:label>Data</rdfs:label>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <aao:type rdf:resource="http://purl.org/audiovisualanalytics/ontology/Datatype"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/audiovisualanalytics/ontology/Histogram">
-    <rdfs:label>Histogram</rdfs:label>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <aao:suitableFor rdf:resource="http://purl.org/audiovisualanalytics/ontology/StatisticalTest"/>
-    <owl:subClassOf rdf:resource="http://purl.org/audiovisualanalytics/ontology/Visualization"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/audiovisualanalytics/ontology/Visualization">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <aao:output rdf:resource="http://purl.org/audiovisualanalytics/ontology/VisualRepresentation"/>
-    <aao:numberOfDimensions rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
-    <rdfs:label>Visualization</rdfs:label>
-    <aao:suitableFor rdf:resource="http://purl.org/audiovisualanalytics/ontology/Processing"/>
-    <aao:uses rdf:resource="http://purl.org/audiovisualanalytics/ontology/Processing"/>
-    <aao:suitableFor rdf:resource="http://purl.org/audiovisualanalytics/ontology/Datatype"/>
-    <aao:input rdf:resource="http://purl.org/audiovisualanalytics/ontology/Data"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/audiovisualanalytics/ontology/VisualRepresentation">
-    <rdfs:label>Visual Representation</rdfs:label>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/audiovisualanalytics/ontology/DynamicAvailability">
-    <rdfs:label>Dynamic Availability</rdfs:label>
-    <owl:subClassOf rdf:resource="http://purl.org/audiovisualanalytics/ontology/Availability"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/audiovisualanalytics/ontology/Timeline">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <owl:subClassOf rdf:resource="http://purl.org/audiovisualanalytics/ontology/ScatterPlot"/>
-    <rdfs:label>Timeline</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/audiovisualanalytics/ontology/PCA">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label>PCA</rdfs:label>
-    <owl:subClassOf rdf:resource="http://purl.org/audiovisualanalytics/ontology/MDS"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/audiovisualanalytics/ontology/uses">
-    <rdfs:label>uses</rdfs:label>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/audiovisualanalytics/ontology/KolmogorovSmirnovTest">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label>Kolmogorov Smirnov Test</rdfs:label>
-    <owl:subClassOf rdf:resource="http://purl.org/audiovisualanalytics/ontology/StatisticalTest"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/audiovisualanalytics/ontology/StatisticalTest">
-    <rdfs:label>Statistical Test</rdfs:label>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <owl:subClassOf rdf:resource="http://purl.org/audiovisualanalytics/ontology/Processing"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/audiovisualanalytics/ontology/ScatterPlot">
-    <rdfs:label>Scatter Plot</rdfs:label>
-    <aao:suitableFor rdf:resource="http://purl.org/audiovisualanalytics/ontology/MDS"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <owl:subClassOf rdf:resource="http://purl.org/audiovisualanalytics/ontology/Visualization"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/audiovisualanalytics/ontology/Cleaning">
-    <rdfs:label>Cleaning</rdfs:label>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <owl:subClassOf rdf:resource="http://purl.org/audiovisualanalytics/ontology/PreProcessing"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/audiovisualanalytics/ontology/subClassOf">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:label>sub class of</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/audiovisualanalytics/ontology/suitableFor">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:label>suitable for</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/audiovisualanalytics/ontology/HeatMap">
-    <rdfs:label>Heat Map</rdfs:label>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <owl:subClassOf rdf:resource="http://purl.org/audiovisualanalytics/ontology/Visualization"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/audiovisualanalytics/ontology/type">
-    <rdfs:label>type</rdfs:label>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/audiovisualanalytics/ontology/Datatype">
-    <rdfs:label>Datatype</rdfs:label>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <aao:type rdf:resource="http://purl.org/audiovisualanalytics/ontology/Datatype"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/audiovisualanalytics/ontology/ZTest">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label>Z-Test</rdfs:label>
-    <owl:subClassOf rdf:resource="http://purl.org/audiovisualanalytics/ontology/StatisticalTest"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/audiovisualanalytics/ontology/PreProcessing">
-    <rdfs:label>Pre-Processing</rdfs:label>
-    <owl:subClassOf rdf:resource="http://purl.org/audiovisualanalytics/ontology/Processing"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/audiovisualanalytics/ontology/Availability">
-    <rdfs:label>Availability</rdfs:label>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/audiovisualanalytics/ontology/StaticAvailability">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label>Static Availability</rdfs:label>
-    <owl:subClassOf rdf:resource="http://purl.org/audiovisualanalytics/ontology/Availability"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/audiovisualanalytics/ontology/Network">
-    <rdfs:label>Network</rdfs:label>
-    <aao:subClassOf rdf:resource="http://purl.org/audiovisualanalytics/ontology/RelationalData"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/audiovisualanalytics/ontology/processes">
-    <rdfs:label>processes</rdfs:label>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/audiovisualanalytics/ontology/Animation">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label>Animation</rdfs:label>
-    <owl:subClassOf rdf:resource="http://purl.org/audiovisualanalytics/ontology/VisualRepresentation"/>
+    <rdfs:label>Temporal Series</rdfs:label>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/audiovisualanalytics/ontology/Audio">
     <rdfs:label>Audio</rdfs:label>
     <owl:subClassOf rdf:resource="http://purl.org/audiovisualanalytics/ontology/TemporalSeries"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/audiovisualanalytics/ontology/availability">
+  <rdf:Description rdf:about="http://purl.org/audiovisualanalytics/ontology/StatisticalTest">
+    <rdfs:label>Statistical Test</rdfs:label>
+    <owl:subClassOf rdf:resource="http://purl.org/audiovisualanalytics/ontology/Processing"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/audiovisualanalytics/ontology/ScatterPlot">
+    <rdfs:label>Scatter Plot</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:subClassOf rdf:resource="http://purl.org/audiovisualanalytics/ontology/Visualization"/>
+    <aao:suitableFor rdf:resource="http://purl.org/audiovisualanalytics/ontology/MDS"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/audiovisualanalytics/ontology/RelationalData">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:subClassOf rdf:resource="http://purl.org/audiovisualanalytics/ontology/Datatype"/>
+    <rdfs:label>Relational Data</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/audiovisualanalytics/ontology/uses">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label>uses</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/audiovisualanalytics/ontology/Graph">
+    <rdfs:label>Graph</rdfs:label>
+    <owl:subClassOf rdf:resource="http://purl.org/audiovisualanalytics/ontology/Network"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/audiovisualanalytics/ontology/Visualization">
+    <aao:output rdf:resource="http://purl.org/audiovisualanalytics/ontology/VisualRepresentation"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <aao:uses rdf:resource="http://purl.org/audiovisualanalytics/ontology/Processing"/>
+    <aao:input rdf:resource="http://purl.org/audiovisualanalytics/ontology/Data"/>
+    <rdfs:label>Visualization</rdfs:label>
+    <aao:suitableFor rdf:resource="http://purl.org/audiovisualanalytics/ontology/Processing"/>
+    <aao:suitableFor rdf:resource="http://purl.org/audiovisualanalytics/ontology/Datatype"/>
+    <aao:numberOfDimensions rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/audiovisualanalytics/ontology/Network">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:subClassOf rdf:resource="http://purl.org/audiovisualanalytics/ontology/RelationalData"/>
+    <rdfs:label>Network</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/audiovisualanalytics/ontology/Data">
+    <rdfs:label>Data</rdfs:label>
+    <aao:availability rdf:resource="http://purl.org/audiovisualanalytics/ontology/Availability"/>
+    <aao:type rdf:resource="http://purl.org/audiovisualanalytics/ontology/Datatype"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/audiovisualanalytics/ontology/KolmogorovSmirnovTest">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:subClassOf rdf:resource="http://purl.org/audiovisualanalytics/ontology/StatisticalTest"/>
+    <rdfs:label>Kolmogorov Smirnov Test</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/audiovisualanalytics/ontology/Processing">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <aao:processes rdf:resource="http://purl.org/audiovisualanalytics/ontology/Data"/>
+    <aao:suitableFor rdf:resource="http://purl.org/audiovisualanalytics/ontology/Datatype"/>
+    <rdfs:label>Processing</rdfs:label>
+    <aao:output rdf:resource="http://purl.org/audiovisualanalytics/ontology/Data"/>
+    <aao:input rdf:resource="http://purl.org/audiovisualanalytics/ontology/Data"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/audiovisualanalytics/ontology/StaticAvailability">
+    <owl:subClassOf rdf:resource="http://purl.org/audiovisualanalytics/ontology/Availability"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Static Availability</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/audiovisualanalytics/ontology/input">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label>input</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/audiovisualanalytics/ontology/PreProcessing">
+    <rdfs:label>Pre-Processing</rdfs:label>
+    <owl:subClassOf rdf:resource="http://purl.org/audiovisualanalytics/ontology/Processing"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/audiovisualanalytics/ontology/MDS">
+    <rdfs:label>MDS</rdfs:label>
+    <owl:subClassOf rdf:resource="http://purl.org/audiovisualanalytics/ontology/Processing"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/audiovisualanalytics/ontology/Histogram">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:subClassOf rdf:resource="http://purl.org/audiovisualanalytics/ontology/Visualization"/>
+    <rdfs:label>Histogram</rdfs:label>
+    <aao:suitableFor rdf:resource="http://purl.org/audiovisualanalytics/ontology/StatisticalTest"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/audiovisualanalytics/ontology/PCA">
+    <owl:subClassOf rdf:resource="http://purl.org/audiovisualanalytics/ontology/MDS"/>
+    <rdfs:label>PCA</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/audiovisualanalytics/ontology/type">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label>type</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/audiovisualanalytics/ontology/availability">
     <rdfs:label>availability</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/audiovisualanalytics/ontology/ZTest">
+    <rdfs:label>Z-Test</rdfs:label>
+    <owl:subClassOf rdf:resource="http://purl.org/audiovisualanalytics/ontology/StatisticalTest"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/audiovisualanalytics/ontology/ZScore">
+    <rdfs:label>Z-Score</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:subClassOf rdf:resource="http://purl.org/audiovisualanalytics/ontology/PreProcessing"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/audiovisualanalytics/ontology/HeatMap">
+    <rdfs:label>Heat Map</rdfs:label>
+    <owl:subClassOf rdf:resource="http://purl.org/audiovisualanalytics/ontology/Visualization"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/audiovisualanalytics/ontology/output">
     <rdfs:label>output</rdfs:label>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/audiovisualanalytics/ontology/TemporalSeries">
-    <aao:subClassOf rdf:resource="http://purl.org/audiovisualanalytics/ontology/Datatype"/>
-    <rdfs:label>Temporal Series</rdfs:label>
+  <rdf:Description rdf:about="http://purl.org/audiovisualanalytics/ontology/DynamicAvailability">
+    <rdfs:label>Dynamic Availability</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:subClassOf rdf:resource="http://purl.org/audiovisualanalytics/ontology/Availability"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/audiovisualanalytics/ontology/Animation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:subClassOf rdf:resource="http://purl.org/audiovisualanalytics/ontology/VisualRepresentation"/>
+    <rdfs:label>Animation</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/audiovisualanalytics/ontology/Cleaning">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:subClassOf rdf:resource="http://purl.org/audiovisualanalytics/ontology/PreProcessing"/>
+    <rdfs:label>Cleaning</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/audiovisualanalytics/ontology/Timeline">
+    <rdfs:label>Timeline</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:subClassOf rdf:resource="http://purl.org/audiovisualanalytics/ontology/ScatterPlot"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/audiovisualanalytics/ontology/Datatype">
+    <aao:type rdf:resource="http://purl.org/audiovisualanalytics/ontology/Datatype"/>
+    <rdfs:label>Datatype</rdfs:label>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#subClassOf">
+  <rdf:Description rdf:about="http://purl.org/audiovisualanalytics/ontology/suitableFor">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label>suitable for</rdfs:label>
   </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/audiovisualanalytics/ontology/Graph">
+  <rdf:Description rdf:about="http://purl.org/audiovisualanalytics/ontology/VisualRepresentation">
+    <rdfs:label>Visual Representation</rdfs:label>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label>Graph</rdfs:label>
-    <aao:subClassOf rdf:resource="http://purl.org/audiovisualanalytics/ontology/Network"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/audiovisualanalytics/ontology/numberOfDimensions">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
     <rdfs:label>number of dimensions</rdfs:label>
   </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/audiovisualanalytics/ontology/ZScore">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label>Z-Score</rdfs:label>
-    <owl:subClassOf rdf:resource="http://purl.org/audiovisualanalytics/ontology/PreProcessing"/>
+  <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#subClassOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/audiovisualanalytics/ontology/processes">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label>processes</rdfs:label>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/audiovisualanalytics/ontology/Image">
     <owl:subClassOf rdf:resource="http://purl.org/audiovisualanalytics/ontology/VisualRepresentation"/>
-    <rdfs:label>Image</rdfs:label>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Image</rdfs:label>
   </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/audiovisualanalytics/ontology/input">
-    <rdfs:label>input</rdfs:label>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  <rdf:Description rdf:about="http://purl.org/audiovisualanalytics/ontology/Availability">
+    <rdfs:label>Availability</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
 </rdf:RDF>

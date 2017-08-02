@@ -21,10 +21,10 @@ a = rdf.type
 triples = [
         (aao.Datatype, aao.type, aao.Datatype),
         (aao.Audio, owl.subClassOf, aao.TemporalSeries),
-        (aao.TemporalSeries, aao.subClassOf, aao.Datatype),
-        (aao.RelationalData, aao.subClassOf, aao.Datatype),
-        (aao.Network, aao.subClassOf, aao.RelationalData),
-        (aao.Graph, aao.subClassOf, aao.Network),
+        (aao.TemporalSeries, owl.subClassOf, aao.Datatype),
+        (aao.RelationalData, owl.subClassOf, aao.Datatype),
+        (aao.Network, owl.subClassOf, aao.RelationalData),
+        (aao.Graph,   owl.subClassOf, aao.Network),
 
         (aao.Data, aao.type, aao.Datatype),
         (aao.Data, aao.availability, aao.Availability),

@@ -23,7 +23,7 @@ aao:DynamicAvailability a owl:Class ;
 
 aao:Graph a owl:Class ;
     rdfs:label "Graph" ;
-    aao:subClassOf aao:Network .
+    owl:subClassOf aao:Network .
 
 aao:HeatMap a owl:Class ;
     rdfs:label "Heat Map" ;
@@ -77,9 +77,6 @@ aao:output a owl:ObjectProperty ;
 aao:processes a owl:ObjectProperty ;
     rdfs:label "processes" .
 
-aao:subClassOf a owl:ObjectProperty ;
-    rdfs:label "sub class of" .
-
 aao:suitableFor a owl:ObjectProperty ;
     rdfs:label "suitable for" .
 
@@ -93,11 +90,11 @@ owl:subClassOf a owl:ObjectProperty .
 
 aao:Network a owl:Class ;
     rdfs:label "Network" ;
-    aao:subClassOf aao:RelationalData .
+    owl:subClassOf aao:RelationalData .
 
 aao:RelationalData a owl:Class ;
     rdfs:label "Relational Data" ;
-    aao:subClassOf aao:Datatype .
+    owl:subClassOf aao:Datatype .
 
 aao:ScatterPlot a owl:Class ;
     rdfs:label "Scatter Plot" ;
@@ -106,7 +103,7 @@ aao:ScatterPlot a owl:Class ;
 
 aao:TemporalSeries a owl:Class ;
     rdfs:label "Temporal Series" ;
-    aao:subClassOf aao:Datatype .
+    owl:subClassOf aao:Datatype .
 
 aao:MDS a owl:Class ;
     rdfs:label "MDS" ;
