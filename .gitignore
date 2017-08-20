@@ -1,2 +1,5 @@
 *.swp
 algs/
+*.log
+*.out
+*.aux
