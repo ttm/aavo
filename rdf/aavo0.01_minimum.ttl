@@ -22,7 +22,7 @@ aao:Visualization a owl:Class ;
     aao:input aao:Data ;
     aao:numberOfDimensions xsd:double ;
     aao:output aao:VisualRepresentation ;
-    aao:suitableFor aao:Datatype,
+    aao:suitableFor aao:DatasetType,
         aao:Processing ;
     aao:uses aao:Processing .
 
@@ -48,16 +48,16 @@ owl:subClassOf a owl:ObjectProperty .
 
 aao:Data a owl:Class ;
     rdfs:label "Data" ;
-    aao:type aao:Datatype .
+    aao:type aao:DatasetType .
 
-aao:Datatype a owl:Class ;
-    rdfs:label "Datatype" .
+aao:DatasetType a owl:Class ;
+    rdfs:label "Dataset Type" .
 
 aao:Processing a owl:Class ;
     rdfs:label "Processing" ;
     aao:input aao:Data ;
     aao:output aao:Data ;
-    aao:suitableFor aao:Datatype .
+    aao:suitableFor aao:DatasetType .
 
 aao:VisualRepresentation a owl:Class ;
     rdfs:label "Visual Representation" .

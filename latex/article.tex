@@ -93,7 +93,7 @@ expressive power of the abstraction.
 
 \pagestyle{fancy}
 
-\section{INTRODUCTION}
+\section{INTRODUCTION}\label{sec:intro}
 Visual Analytics' usual definition is data mining (or the science of analytical reasoning facilitated)
 through interactive visual interfaces.
 From this definition, one can grasp that at least three fields are directly related to visual analytics:
@@ -128,7 +128,7 @@ Final remarks and future work are in Section~\ref{sec:con}.
 \section{METHODS}\label{sec:methods}
 The methods described here are standard of the semantic web
 to achieve formalized conceptualizations.
-The next sections addresses the subjects very briefly
+The next sections address the subjects very briefly
 and the interested reader can visit the literature
 of the field and will surely find great items,
 including the W3C recommendations~\citep{w3cld,ldb}.
@@ -176,7 +176,9 @@ describing each of the properties: \texttt{example:properties/name}, \texttt{exa
 and the concept \texttt{example:concepts/Reading}.
 In fact, the triples above would probably be available in the URI/URL:
 \texttt{example:people/mary}.
-One good working example of this is DBPedia~\citep{dbpedia}.
+One good working example\footnote{Visit \url{http://dbpedia.org/page/Rhesus_macaque}
+and click on the concepts and properties to start browsing the web of linked data.}
+of this is DBPedia~\citep{dbpedia}.
 The process of accessing a URI to find more triples is called \emph{dereferencing the URI} (or simply dereferencing).
 
 \subsection{RDFS}
@@ -211,44 +213,173 @@ interviewed by the first author.
 Also, the first author is acquiring a deeper knowledge in the field.
 
 \section{RESULTS AND DISCUSSION}\label{sec:res}
-\subsection{AAVO core}
+% a word about AAVO, audiovisual, discerning core and expansions
+% main concepts
+Using the framework exposed in the previous section,
+we elaborated an initial vocabulary and ontology for
+visual analytics: AAVO (Audiovisual Analytics Vocabulary and Ontology).
+The inclusion of ``audio'' is both a reminder of the possibilities
+available for using audio to represent data and perceive patterns,
+and a fitting incorporation of audio to visual analytics given
+audiovisual capabilites of current ordinary computers.
+
+The main concepts and their interrelation are presented in
+Section~\ref{sec:core} while an example extension is on Section~\ref{sec:ext}.
+Section~\ref{sec:voc} hold annotations for the vocabulary which are not promptly
+given by the previous sections.
+Some of the relations bellow were expressed by very recent 
+techniques that are described in~\cite{enhance}.
+Their meaning, though, might be easily inferred.
+
+\subsection{AAVO core}\label{sec:core}
+The core of AAVO is designed to be minimal and hold the following concepts as
+depicted in Figure~\ref{fig:minimum}:
+\begin{itemize}
+	\item Visualization: a technique to generate a Visual Representation from Data.
+	\item Visual Representation: a representation of data by visual cues.
+		A Visual Representation can be an Image or an Animation.
+	\item Data: a set o values be them qualitative or quantitative~\citep{wikipData}.
+	\item Dataset Type: a type of organization and meaning of data~\cite{munzner}.
+	\item Processing: transforms Data into Data. Pre-processing is a kind of Processing.
+\end{itemize}
+
+We envision that there should be at least the following concepts in
+AAVO core when it reaches maturity:
+\begin{itemize}
+	\item Hypothesis: a proposed explanation for a phenomenon that might be
+		1) given beforehand for being proved or refuted by an Analysis,
+		2) shaed by means of an Analysis,
+		or 3) presented by means of a Visualization.
+	\item Analysis: a set of procedures used to obtain understanding about
+		Data or a phenomenon.
+	\item Task/Purpose/Application: the goal or objective of an Analysis.
+\end{itemize}
+\noindent These concepts were not included in AAVO core (e.g. Figure~\ref{fig:minimum})
+because we chose to better conceptualize the field in order to avoid too much rework.
+From the definitions above, raises the question:
+should we also include Phenomenon among these core concepts?
+
+Other relations that can be added to the core or to an extension but
+are directly related to the core:
+\begin{itemize}
+	\item Visualization is a type of Processing.
+	\item Visual Representation is a Dataset Type.
+	\item Processing ``suitable for'' Data.
+	\item Visualization ``number of dimensions'' real (not double as stated for now).
+\end{itemize}
+
+An example of question still left unanswered:
+is a Visualization only outputs Visual Representation
+or can it output other Data?
+This and many other questions might have a resolution
+that are genuinely dependent on the conceptual design of the ontology.
+
 \begin{figure}[!htbp] %h or !htbp
 \vspace{-2pt}
 \begin{center}
 % \includegraphics[height=6.7cm,width=9cm]{../figs/aavo0.01_minimum.png}
 \includegraphics[width=\textwidth]{../figs/aavo0.01_minimum.png}
-    \caption{}
+	\caption{AAVO core, discussed in Section~\ref{sec:core}.
+	A Visualization outputs a Visual Representation that can be an Image or an Animation.
+	A Visualization is suitable for a Dataset Type and for a Processing routine which transforms
+	Data into Data.}
 \label{fig:minimum}%
 \end{center}
 \end{figure}
 
 % potential enhancements, from the email to cristina
 
-\subsection{AAVO example expansion}
+\subsection{AAVO example expansion}\label{sec:ext}
+There are many ways in which the AAVO core might be expanded.
+Figure~\ref{fig:exemp} is an example expansion.
+Concepts were added which are hyponyms to Dataset Type (Temporal Series, Relational Data),
+to Pre-Processing (Z-Score, Cleaning), Processing (MDS, Statistical Test)
+and Visualization (Heat Map, Histogram, Scatter Plot, Timeline).
+Some example of further subclasses are also added.
+A different kind of expansion was achieved by including (Data) Availability
+and the less general concepts of Dynamic Availability and Static Availability.
+A Graph is regarded as a Network without any context or further attributes beyond
+nodes and edges.
+
+Ideally, AAVO expansions should reach related fields, such as HCI,
+by linking to other existing ontologies (such as DBPedia) or incorporating
+enough concepts to then bind and rely in third party conceptualizations.
+
 \begin{figure}[!htbp] %h or !htbp
 \vspace{-2pt}
 \begin{center}
 \includegraphics[width=\textwidth]{../figs/aavo0.01_exemplified.png}
-    \caption{}
-\label{fig:minimum}%
+    \caption{Added less general concepts: Statistical Test, MDS, Timeline, Z-Score, Network, etc.
+	A thorough consideration of this expansion of the AAVO core is at Section~\ref{sec:ext}.}
+\label{fig:exemp}%
 \end{center}
 \end{figure}
 
+\subsection{Vocabulary annotations}\label{sec:voc}
+Beyond what is made explicit in the previous sections,
+there are some aspects of the knowledge and language that
+are to be directly added to the SKOS vocabulary.
+Examples:
+\begin{itemize}
+	\item in a dataset, an element is also called: an item, an observation, an individual, a point,
+		and even a data point and a data row. 
+	\item A graph node is also called: a vertex, and every name that are used to designate an element.
+	\item A graph edge is also called: a link, a bond, a line, and a connection.
+	\item Z-scores are also called: standard scores, normal scores, standardized variables, and z-values. 
+\end{itemize}
+
 \section{CONCLUSIONS AND FURTHER WORK}\label{sec:con}
+This initial formalized conceptualization of the AAVO
+holds some relations which are not explicitly described by
+current literature mainly because:
+1) AAVO was created with the purpose of reaching a sound
+conceptualization that allows it to be formalized as linked data;
+2) AAVO has the purpose of representing the knowledge in Visual Analytics
+to enable inference by machines.
+There are other uses for AAVO which were uncovered in Section~\ref{sec:intro},
+but for those there are conceptual models available~\cite{munzner}.
+
+Potential further steps include:
+\begin{itemize}
+	\item the inclusion of the concepts Hypothesis, Analysis, and Task
+		into the AAVO Core.
+	\item Realizing AAVO expansions until the reached concepts can be linked
+		to other ontologies that are sound, used and maintained.
+	\item Using AAVO for obtaining interesting relations by means of automated
+		inference and for assisting a (audio) visual analytics software.
+\end{itemize}
 
 
 
 \subsection*{\textit{Acknowledgements}}
-The authors thank CNPq and FAPESP for the fundings received while researching the topic of this article,
+The authors thank CNPq and FAPESP for the funding received while researching the topic of this article,
 the researchers of IFSC/USP and ICMC/USP for the recurrent collaboration in every situation
 where we needed directions for investigation.
 
 % ------------------------------------------------------------------------
 \begin{thebibliography}{99}
 \fontsize{11}{0}\selectfont
-\bibitem[Bechhofer \& Miles, 2008]{owlSkos}
-	Bechhofer, S., \& Miles, A. (2008). Using OWL and SKOS. Note of the SWD W3C working group.
-From \url{https://www.w3.org/2006/07/SWD/SKOS/skos-and-owl/master.html}
+\bibitem[W3C, 2010]{w3cld}
+	W3C (2017). LINKED DATA CURRENT STATUS, from \url{https://www.w3.org/standards/techs/linkeddata}
+
+\bibitem[Heath \& Bizer, 2011]{ldb}
+	Heath, T. \& Bizer, C. (2011). Linked Data: Evolving the Web into a Global Data Space (1st edition). Synthesis Lectures on the Semantic Web: Theory and Technology, 1:1, 1-136. Morgan \& Claypool.
+
+\bibitem[Lehmann et al., 2015]{dbpedia}
+	Lehmann, J., Isele, R., Jakob, M., Jentzsch, A., Kontokostas, D., Mendes, P. N., ... \& Bizer, C. (2015). DBpedia–a large-scale, multilingual knowledge base extracted from Wikipedia. Semantic Web, 6(2), 167-195.
+
+\bibitem[Fabbri, 2017]{enhance}
+	Fabbri, R. (2017). Necessary enhancements of linked data expressiveness for ontologies.
+		Encontro Nacional de Modelagem Computacional 2017 (XX ENMC).
+		From \url{https://github.com/ttm/ontologyEnhancements/raw/master/article.pdf}
+
+\bibitem[Wikipedia, 2017]{wikipData}
+	Data. (2017, August 21). In Wikipedia, The Free Encyclopedia. Retrieved
+		22:31, August 21, 2017
+		, from \url{https://en.wikipedia.org/w/index.php?title=Data&oldid=796493851}
+
+\bibitem[Munzner, 2014]{munzner}
+	Munzner, T. (2014). Visualization analysis and design. CRC press.
 
 \bibitem[Fabbri \& Oliveira, 2016]{losd}
 	Fabbri, R., \& de Oliveira, O. N. (2016). Linked Open Social Database. Github repositories, from \url{https://github.com/ttm/linkedOpenSocialDatabase/raw/master/paper.pdf}

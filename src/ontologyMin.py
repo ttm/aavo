@@ -6,17 +6,17 @@ aao = p.rdf.NS.aao # Audiovisual Analytics Ontology
 a =  p.rdf.NS.rdf.type
 
 triples = [
-        (aao.Data, aao.type, aao.Datatype),
+        (aao.Data, aao.type, aao.DatasetType),
 
         (aao.Processing, aao.input, aao.Data),
         (aao.Processing, aao.output, aao.Data),
-        (aao.Processing, aao.suitableFor, aao.Datatype),
+        (aao.Processing, aao.suitableFor, aao.DatasetType),
 
         (aao.PreProcessing, owl.subClassOf, aao.Processing),
 
         (aao.Visualization, aao.uses, aao.Processing), # better term than uses?
         (aao.Visualization, aao.suitableFor, aao.Processing),
-        (aao.Visualization, aao.suitableFor, aao.Datatype),
+        (aao.Visualization, aao.suitableFor, aao.DatasetType),
         (aao.Visualization, aao.input, aao.Data),
         (aao.Visualization, aao.numberOfDimensions, xsd.double),
 
@@ -44,5 +44,5 @@ o.render(path, "aavo0.01_minimum")
 # Notes:
 # * Include Audio(visualization)
 # * Make an even simpler core
-# * Main concepts: Visualization, Analysis*, Data, Datatype, Processing, PreProcessing, Hypothesis, Task/Purpose/Application
+# * Main concepts: Visualization, Analysis*, Data, DatasetType, Processing, PreProcessing, Hypothesis, Task/Purpose/Application
 # * Consider existential and universal restrictions

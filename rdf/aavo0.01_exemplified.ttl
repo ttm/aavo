@@ -46,13 +46,18 @@ aao:PCA a owl:Class ;
     rdfs:label "PCA" ;
     owl:subClassOf aao:MDS .
 
+aao:ScatterPlot a owl:Class ;
+    rdfs:label "Scatter Plot" ;
+    aao:suitableFor aao:MDS ;
+    owl:subClassOf aao:Visualization .
+
 aao:StaticAvailability a owl:Class ;
     rdfs:label "Static Availability" ;
     owl:subClassOf aao:Availability .
 
 aao:Timeline a owl:Class ;
     rdfs:label "Timeline" ;
-    owl:subClassOf aao:ScatterPlot .
+    owl:subClassOf aao:Visualization .
 
 aao:ZScore a owl:Class ;
     rdfs:label "Z-Score" ;
@@ -96,11 +101,6 @@ aao:RelationalData a owl:Class ;
     rdfs:label "Relational Data" ;
     owl:subClassOf aao:Datatype .
 
-aao:ScatterPlot a owl:Class ;
-    rdfs:label "Scatter Plot" ;
-    aao:suitableFor aao:MDS ;
-    owl:subClassOf aao:Visualization .
-
 aao:TemporalSeries a owl:Class ;
     rdfs:label "Temporal Series" ;
     owl:subClassOf aao:Datatype .
@@ -123,6 +123,11 @@ aao:StatisticalTest a owl:Class ;
 aao:VisualRepresentation a owl:Class ;
     rdfs:label "Visual Representation" .
 
+aao:Data a owl:Class ;
+    rdfs:label "Data" ;
+    aao:availability aao:Availability ;
+    aao:type aao:Datatype .
+
 aao:Visualization a owl:Class ;
     rdfs:label "Visualization" ;
     aao:input aao:Data ;
@@ -131,11 +136,6 @@ aao:Visualization a owl:Class ;
     aao:suitableFor aao:Datatype,
         aao:Processing ;
     aao:uses aao:Processing .
-
-aao:Data a owl:Class ;
-    rdfs:label "Data" ;
-    aao:availability aao:Availability ;
-    aao:type aao:Datatype .
 
 aao:Datatype a owl:Class ;
     rdfs:label "Datatype" .

@@ -41,7 +41,8 @@ triples = [
         (aao.Histogram, owl.subClassOf, aao.Visualization),
         (aao.Histogram, aao.suitableFor, aao.StatisticalTest),
         (aao.ScatterPlot, owl.subClassOf, aao.Visualization),
-        (aao.Timeline, owl.subClassOf, aao.ScatterPlot), # Ok?? Enhance this
+        (aao.Timeline, owl.subClassOf, aao.Visualization), # Ok?? Enhance this
+        (aao.Timeline, owl.suitableFor, aao.TemporalSeries), # Ok?? Enhance this
         (aao.ScatterPlot, aao.suitableFor, aao.MDS),
 
         (aao.Visualization, aao.output, aao.VisualRepresentation), # put Visual Representation as a subclass of Data?
