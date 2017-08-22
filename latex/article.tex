@@ -32,6 +32,7 @@
 \renewcommand\thebibliography[1]{\OLDthebibliography{#1} \setlength{\parskip}{0pt}\setlength{\itemsep}{0pt plus 0.3ex}}
 
 \usepackage{grffile}
+\usepackage{afterpage}
 
 %%-----------------------------------------------EDIT-----------------------------------------------
 \title{Audiovisual Analytics Vocabulary and Ontology (AAVO): initial core and example expansion}
@@ -77,12 +78,12 @@
 
 \begin{abstract}
 Visual Analytics might be defined as data mining though interactive visual interfaces.
-The field and has received noticeable consideration by researchers and the industry. 
+The field and has received prominent consideration by researchers, developers and the industry. 
 The literature, however, is complex because it involves many fields of knowledge
 and is considerably recent.
 In this article we describe an initial organization of this knowledge as an OWL ontology
 and a SKOS vocabulary.
-This effort might be useful in many ways that include conceptual considerations,
+This effort might be useful in many ways that include conceptual considerations and
 software implementations.
 Within the results and discussions, we expose a core and an example expansion
 of the conceptualization, and incorporate design issues that enhance the
@@ -101,11 +102,10 @@ data mining, human-computer interaction, and data visualization.
 Each one of these fields are multidisciplinary and known to be considerably complex
 with multiple theories and vast literature.
 
-This work is proposed as an organization of the knowledge related to visual analytics
-as a SKOS vocabulary and an OWL ontology.
-In other words, this document reports in an initial formalized conceptualization
+This work reports an initial organization of the knowledge related to visual analytics
+as a SKOS vocabulary and an OWL ontology, i.e. a formalized conceptualization
 in terms of linked data recommended technologies.
-The uses this formalization can have includes:
+The uses this formalization can have include:
 \begin{itemize}
 	\item introduction of the Visual Analytics subject for non-specialists.
 	\item Expressing a concise overview.
@@ -114,41 +114,40 @@ The uses this formalization can have includes:
 	\item Making inference about the concepts and objects to which they are related.
 \end{itemize}
 
-In the present case, where the formalization is done as linked data,
+In the present case, where the formalization is realized as linked data,
 the conceptualization allows the queries, inferences, relations, etc.
 to be performed also by machines.
-Therefore, for example, a software might be able to relate a dataset
-or analysis methods to visualization techniques to aid a user of
+Therefore, for example, a software might relate a dataset
+or analysis methods to visualization techniques in order to assist a user or
 for automated reporting.
 
-Section~\ref{sec:methods} uncover the methods.
-Section~\ref{sec:res} is dedicated to stating and discussing the results.
+Section~\ref{sec:methods} uncovers the methods and technologies
+needed for stating and discussing the results in Section~\ref{sec:res}.
 Final remarks and future work are in Section~\ref{sec:con}.
 
 \section{METHODS}\label{sec:methods}
 The methods described here are standard of the semantic web
 to achieve formalized conceptualizations.
-The next sections address the subjects very briefly
-and the interested reader can visit the literature
-of the field and will surely find great items,
-including the W3C recommendations~\citep{w3cld,ldb}.
+Thus, the next sections address the subjects very briefly.
+The interested reader should visit the vanilla literature,
+especially the W3C recommendations~\citep{w3cld,ldb}.
 
 \subsection{The semantic web}
-The semantic web is constituted by data which are linked in the same way
-as web pages are: through HTTP and URLs.
+The semantic web is constituted by data which is linked in the same way
+web pages are: through HTTP and URLs.
 W3C recommendations are the main sources of protocols and best practices of the field.
-In practice, the terms 'linked data' and 'semantic web' are most often used interchangeably.
-A distinction might arise in some contexts where on need to refer to the linked data or
+The terms 'linked data' and 'semantic web' are most often used interchangeably.
+A distinction might arise in some contexts where one needs to refer to the linked data or
 the semantic web created by all or some portion of linked data, but, as a knowledge and technological
 field, the terms are equivalent.
 The main topics of this article are data visualization (or visual analytics)
-and semantic web.
-Accordingly, all the sections tackle the subject of the semantic web.
+and semantic web, and all the sections tackle the subject of the semantic web
+for it is the framework in which data visualization knowledge is represented.
 
 \subsection{RDF}
 The semantic web is built using the Resource Description Framework (RDF).
 The RDF data model is based on making statements in the form of triples
-(``subject-predicate-object'') and using Unique Resource Identifier for
+(``subject-predicate-object'') and using Unique Resource Identifiers (URIs) for
 objects and concepts.
 It is also part of the framework to use URIs that are URLs whenever possible,
 to enable the data linkage.
@@ -163,13 +162,13 @@ Accordingly, one can write:
 	<http://example.org/properties/likes> 
                 <http://example.org/concepts/Reading> .
 \end{Verbatim}
-\noindent to express that there is person called Mary Shastacian which is 57 years old and likes reading.
+\noindent to express that there is a 57 years old person called Mary Shastacian which likes reading.
 There are many formats to write/serialize RDF data.
-The example above is written in Turtle format and it will be used throughout this document.
+The example above is written in Turtle and it will be the format used throughout this document.
 
 In real settings, when everything is working as recommended,
 each of these URIs (that are URLs!) might be accessed 
-through HTTP to access more triples referring to the URI accessed.
+through HTTP to reach more triples referring to the URI.
 From the triples above, one would be able to access triples
 describing each of the properties: \texttt{example:properties/name}, \texttt{example:properties/age}, and\\
 \texttt{example:properties/likes},
@@ -193,7 +192,7 @@ The Simple Knowledge Organization System (SKOS)
 is a data model for representing controlled vocabularies.
 SKOS is a W3C recommendation to facilitate publication
 and use of vocabularies and is built upon RDF and RDFS.
-It holds itself a vocabulary for concepts, notation, documentation,
+It is itself a vocabulary for concepts, notation, documentation,
 semantic and mapping relations, and collections.
 
 \subsection{OWL}
@@ -217,17 +216,17 @@ Also, the first author is acquiring a deeper knowledge in the field.
 % main concepts
 Using the framework exposed in the previous section,
 we elaborated an initial vocabulary and ontology for
-visual analytics: AAVO (Audiovisual Analytics Vocabulary and Ontology).
+visual analytics: the AAVO (Audiovisual Analytics Vocabulary and Ontology).
 The inclusion of ``audio'' is both a reminder of the possibilities
 available for using audio to represent data and perceive patterns,
-and a fitting incorporation of audio to visual analytics given
+and a desirable incorporation of audio to visual analytics given
 audiovisual capabilites of current ordinary computers.
 
-The main concepts and their interrelation are presented in
+The main concepts and their interrelations are presented in
 Section~\ref{sec:core} while an example extension is on Section~\ref{sec:ext}.
-Section~\ref{sec:voc} hold annotations for the vocabulary which are not promptly
+Section~\ref{sec:voc} holds annotations for the vocabulary which are not promptly
 given by the previous sections.
-Some of the relations bellow were expressed by very recent 
+Some of the relations bellow are expressed using very recent 
 techniques that are described in~\cite{enhance}.
 Their meaning, though, might be easily inferred.
 
@@ -236,43 +235,12 @@ The core of AAVO is designed to be minimal and hold the following concepts as
 depicted in Figure~\ref{fig:minimum}:
 \begin{itemize}
 	\item Visualization: a technique to generate a Visual Representation from Data.
-	\item Visual Representation: a representation of data by visual cues.
+	\item Visual Representation: a representation of Data by visual cues.
 		A Visual Representation can be an Image or an Animation.
-	\item Data: a set o values be them qualitative or quantitative~\citep{wikipData}.
-	\item Dataset Type: a type of organization and meaning of data~\cite{munzner}.
+	\item Data: a set of values, be them qualitative or quantitative~\citep{wikipData}.
+	\item Dataset Type: a type of organization and meaning of data~\citep{munzner}.
 	\item Processing: transforms Data into Data. Pre-processing is a kind of Processing.
 \end{itemize}
-
-We envision that there should be at least the following concepts in
-AAVO core when it reaches maturity:
-\begin{itemize}
-	\item Hypothesis: a proposed explanation for a phenomenon that might be
-		1) given beforehand for being proved or refuted by an Analysis,
-		2) shaed by means of an Analysis,
-		or 3) presented by means of a Visualization.
-	\item Analysis: a set of procedures used to obtain understanding about
-		Data or a phenomenon.
-	\item Task/Purpose/Application: the goal or objective of an Analysis.
-\end{itemize}
-\noindent These concepts were not included in AAVO core (e.g. Figure~\ref{fig:minimum})
-because we chose to better conceptualize the field in order to avoid too much rework.
-From the definitions above, raises the question:
-should we also include Phenomenon among these core concepts?
-
-Other relations that can be added to the core or to an extension but
-are directly related to the core:
-\begin{itemize}
-	\item Visualization is a type of Processing.
-	\item Visual Representation is a Dataset Type.
-	\item Processing ``suitable for'' Data.
-	\item Visualization ``number of dimensions'' real (not double as stated for now).
-\end{itemize}
-
-An example of question still left unanswered:
-is a Visualization only outputs Visual Representation
-or can it output other Data?
-This and many other questions might have a resolution
-that are genuinely dependent on the conceptual design of the ontology.
 
 \begin{figure}[!htbp] %h or !htbp
 \vspace{-2pt}
@@ -287,6 +255,37 @@ that are genuinely dependent on the conceptual design of the ontology.
 \end{center}
 \end{figure}
 
+We envision that there should be at least the following concepts in
+AAVO core when it reaches maturity:
+\begin{itemize}
+	\item Hypothesis: a proposed explanation for a phenomenon that might be
+		1) given beforehand and amenable to being proved or refuted by an Analysis,
+		2) shared by means of an Analysis,
+		or 3) presented by means of a Visualization.
+	\item Analysis: a set of procedures used to obtain understanding about
+		Data or a phenomenon.
+	\item Task/Purpose/Application: the goal or objective of an Analysis.
+\end{itemize}
+\noindent These concepts were not included in AAVO core (e.g. Figure~\ref{fig:minimum})
+because we still deciding on the best way to do so.
+From the definitions above, raises the question:
+should we also include Phenomenon among these core concepts?
+
+Other relations that can be added to the core (or to an extension, but
+are directly related to the core):
+\begin{itemize}
+	\item Visualization is a type of Processing.
+	\item Visual Representation is a Dataset Type.
+	\item Processing ``suitable for'' Data.
+	\item Visualization ``number of dimensions'' real (not double as stated for now).
+\end{itemize}
+
+An example of question still left unanswered:
+a Visualization only outputs Visual Representation
+or can it output other Data(set Type)?
+This and many other questions might have a resolution
+that are genuinely dependent on the conceptual design of the ontology.
+
 % potential enhancements, from the email to cristina
 
 \subsection{AAVO example expansion}\label{sec:ext}
@@ -295,25 +294,27 @@ Figure~\ref{fig:exemp} is an example expansion.
 Concepts were added which are hyponyms to Dataset Type (Temporal Series, Relational Data),
 to Pre-Processing (Z-Score, Cleaning), Processing (MDS, Statistical Test)
 and Visualization (Heat Map, Histogram, Scatter Plot, Timeline).
-Some example of further subclasses are also added.
+Some examples of further subclasses are also added.
 A different kind of expansion was achieved by including (Data) Availability
 and the less general concepts of Dynamic Availability and Static Availability.
-A Graph is regarded as a Network without any context or further attributes beyond
+A Graph is regarded as a bare Network without any context or further attributes beyond
 nodes and edges.
-
-Ideally, AAVO expansions should reach related fields, such as HCI,
-by linking to other existing ontologies (such as DBPedia) or incorporating
-enough concepts to then bind and rely in third party conceptualizations.
 
 \begin{figure}[!htbp] %h or !htbp
 \vspace{-2pt}
 \begin{center}
 \includegraphics[width=\textwidth]{../figs/aavo0.01_exemplified.png}
-    \caption{Added less general concepts: Statistical Test, MDS, Timeline, Z-Score, Network, etc.
-	A thorough consideration of this expansion of the AAVO core is at Section~\ref{sec:ext}.}
+    \caption{Example incorporation of less general concepts to AAVO: Statistical Test, MDS, Timeline, Z-Score, Network, etc.
+	A thorough consideration of this expansion of the AAVO core is at Section~\ref{sec:ext}.
+	In case this image is not being properly visualized in paper,
+	an online PDF should be at: \url{https://github.com/ttm/aavo/raw/master/latex/article.pdf}.}
 \label{fig:exemp}%
 \end{center}
 \end{figure}
+
+Ideally, AAVO expansions should reach related fields, such as HCI,
+by linking to other existing ontologies (such as DBPedia) or incorporating
+enough concepts to then bind and rely in third party conceptualizations.
 
 \subsection{Vocabulary annotations}\label{sec:voc}
 Beyond what is made explicit in the previous sections,
@@ -331,22 +332,22 @@ Examples:
 \section{CONCLUSIONS AND FURTHER WORK}\label{sec:con}
 This initial formalized conceptualization of the AAVO
 holds some relations which are not explicitly described by
-current literature mainly because:
-1) AAVO was created with the purpose of reaching a sound
-conceptualization that allows it to be formalized as linked data;
-2) AAVO has the purpose of representing the knowledge in Visual Analytics
+current literature mainly because of the purposes:
+1) of reaching a sound
+conceptualization that allows a formalization as linked data;
+2) of representing the knowledge in Visual Analytics
 to enable inference by machines.
-There are other uses for AAVO which were uncovered in Section~\ref{sec:intro},
-but for those there are conceptual models available~\cite{munzner}.
+There are other uses for AAVO, uncovered in Section~\ref{sec:intro},
+for which there are conceptual models available~\citep{munzner,ward}.
 
 Potential further steps include:
 \begin{itemize}
 	\item the inclusion of the concepts Hypothesis, Analysis, and Task
-		into the AAVO Core.
+		into the AAVO core.
 	\item Realizing AAVO expansions until the reached concepts can be linked
 		to other ontologies that are sound, used and maintained.
 	\item Using AAVO for obtaining interesting relations by means of automated
-		inference and for assisting a (audio) visual analytics software.
+		inference and for assisting a (audio)visual analytics software.
 \end{itemize}
 
 
@@ -360,7 +361,7 @@ where we needed directions for investigation.
 \begin{thebibliography}{99}
 \fontsize{11}{0}\selectfont
 \bibitem[Fabbri, 2017]{enhance}
-	Fabbri, R. (2017). Necessary enhancements of linked data expressiveness for ontologies.
+	Fabbri, R. (2017). Enhancements of linked data expressiveness for ontologies.
 		Encontro Nacional de Modelagem Computacional 2017 (XX ENMC).
 		From \url{https://github.com/ttm/ontologyEnhancements/raw/master/article.pdf}
 
@@ -375,6 +376,9 @@ where we needed directions for investigation.
 
 \bibitem[W3C, 2010]{w3cld}
 	W3C (2017). LINKED DATA CURRENT STATUS, from \url{https://www.w3.org/standards/techs/linkeddata}
+
+\bibitem[Ward et al., 2010]{ward}
+	Ward, M. O., Grinstein, G., \& Keim, D. (2010). Interactive data visualization: foundations, techniques, and applications. CRC Press.
 
 \bibitem[Wikipedia, 2017]{wikipData}
 	Data. (2017, August 21). In Wikipedia, The Free Encyclopedia. Retrieved
