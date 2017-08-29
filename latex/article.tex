@@ -77,11 +77,11 @@
 \rhead{}
 
 \begin{abstract}
-Visual Analytics might be defined as data mining though interactive visual interfaces.
-The field and has received prominent consideration by researchers, developers and the industry. 
-The literature, however, is complex because it involves many fields of knowledge
+Visual Analytics might be defined as data mining assisted by interactive visual interfaces.
+The field has been receiving prominent consideration by researchers, developers and the industry. 
+The literature, however, is complex because it involves multiple fields of knowledge
 and is considerably recent.
-In this article we describe an initial organization of this knowledge as an OWL ontology
+In this article we describe an initial tentative organization of the knowledge in the field as an OWL ontology
 and a SKOS vocabulary.
 This effort might be useful in many ways that include conceptual considerations and
 software implementations.
@@ -95,30 +95,60 @@ expressive power of the abstraction.
 \pagestyle{fancy}
 
 \section{INTRODUCTION}\label{sec:intro}
-Visual Analytics' usual definition is data mining (or the science of analytical reasoning facilitated)
-through interactive visual interfaces.
+Visual Analytics is often defined as data mining (or the science of analytical reasoning)  facilitated by interactive visual interfaces~\citep{wikiVA,visMaster}.
+% * <cristina@icmc.usp.br> 2017-08-24T21:25:25.777Z:
+% 
+% > Visual Analytics is often defined as data mining (or the science of analytical reasoning)  facilitated by interactive visual interfaces
+% 
+% não seria o caso de inserir refs que suportem a afirmação?
+% 
+% ^ <renato.fabbri@gmail.com> 2017-08-29T15:03:18.752Z:
+% 
+% feito
+%
+% ^.
 From this definition, one can grasp that at least three fields are directly related to visual analytics:
 data mining, human-computer interaction, and data visualization.
-Each one of these fields are multidisciplinary and known to be considerably complex
-with multiple theories and vast literature.
+Each one of these fields are inherently multidisciplinary and known to be considerably complex,
+with multiple theories and vast literature. Researchers entering into the field of visual analytics can easily find themselves confused with such a diverse material, possibly presented using  terminology that is not necessarily consistent across the different fields.   
 
-This work reports an initial organization of the knowledge related to visual analytics
+This work reports an initial attempt of organizing the knowledge related to visual analytics
 as a SKOS vocabulary and an OWL ontology, i.e. a formalized conceptualization
+% * <cristina@icmc.usp.br> 2017-08-24T21:34:10.696Z:
+% 
+% > SKOS
+% seria necessário definir os termos? SKOS, OWL... (ou é razoável assumir que a audiência está familiarizada com eles?
+% 
+% ^ <renato.fabbri@gmail.com> 2017-08-25T19:55:32.810Z:
+% 
+% eles não são tão triviais de serem formalizados e, assim, achei por bem definir na seção de métodos...
+%
+% ^.
 in terms of linked data recommended technologies.
-The uses this formalization can have include:
+Such a formalization can have multiple uses, including:
 \begin{itemize}
-	\item introduction of the Visual Analytics subject for non-specialists.
-	\item Expressing a concise overview.
-	\item Queries.
-	\item Relating objects (e.g. data and techniques) inside the field or between the field and other domains.
-	\item Making inference about the concepts and objects to which they are related.
+	\item Facilitating the introduction of the Visual Analytics subject to non-specialists.
+	\item Expressing a concise overview of the field.
+	\item Expressing a domain knowledge against which queries might be performed.
+% * <cristina@icmc.usp.br> 2017-08-24T21:36:14.552Z:
+% 
+% >  Queries
+% esse uso não está expresso usando um verbo, como os demais... do you mean Formulate queries? 
+% 
+% ^ <renato.fabbri@gmail.com> 2017-08-25T19:57:36.800Z:
+% 
+% melhorou?
+%
+% ^.
+	\item Relating objects (e.g. data and techniques) within the field or between the field and other domains.
+	\item Making inferences about the concepts and objects to which they are related.
 \end{itemize}
 
 In the present case, where the formalization is realized as linked data,
 the conceptualization allows the queries, inferences, relations, etc.
 to be performed also by machines.
-Therefore, for example, a software might relate a dataset
-or analysis methods to visualization techniques in order to assist a user or
+Therefore, a software might, for example,  relate a dataset
+or analysis methods to specific visualization techniques, in order to assist a user designing a visualization, or
 for automated reporting.
 
 Section~\ref{sec:methods} uncovers the methods and technologies
@@ -135,11 +165,22 @@ especially the W3C recommendations~\citep{w3cld,ldb}.
 \subsection{The semantic web}
 The semantic web is constituted by data which is linked in the same way
 web pages are: through HTTP and URLs.
-W3C recommendations are the main sources of protocols and best practices of the field.
-The terms 'linked data' and 'semantic web' are most often used interchangeably.
-A distinction might arise in some contexts where one needs to refer to the linked data or
-the semantic web created by all or some portion of linked data, but, as a knowledge and technological
-field, the terms are equivalent.
+W3C recommendations provide the main source of protocols and best practices for the field.
+The terms `linked data' and `semantic web' are most often used interchangeably.
+A distinction might arise in some contexts where one needs to refer to the (linked) data or
+the (semantic) web created by all or some portion of linked data, but, generally speaking, the terms are equivalent.
+% * <cristina@icmc.usp.br> 2017-08-24T21:43:22.224Z:
+% 
+% > as a knowledge and technological
+% > field  
+% 
+%  ??? não entendi, construção estranha...
+% 
+% ^ <renato.fabbri@gmail.com> 2017-08-29T15:06:18.888Z:
+% 
+% simplifiquei e explicitei um pouco mais, acho que ficou melhor. Ok?
+%
+% ^.
 The main topics of this article are data visualization (or visual analytics)
 and semantic web, and all the sections tackle the subject of the semantic web
 for it is the framework in which data visualization knowledge is represented.
@@ -162,9 +203,9 @@ Accordingly, one can write:
 	<http://example.org/properties/likes> 
                 <http://example.org/concepts/Reading> .
 \end{Verbatim}
-\noindent to express that there is a 57 years old person called Mary Shastacian which likes reading.
+\noindent to express that there is a 57 year old person called Mary Shastacian who likes reading.
 There are many formats to write/serialize RDF data.
-The example above is written in Turtle and it will be the format used throughout this document.
+The example above is written in Turtle, which will be the format used throughout this document.
 
 In real settings, when everything is working as recommended,
 each of these URIs (that are URLs!) might be accessed 
@@ -175,9 +216,8 @@ describing each of the properties: \texttt{example:properties/name}, \texttt{exa
 and the concept \texttt{example:concepts/Reading}.
 In fact, the triples above would probably be available in the URI/URL:
 \texttt{example:people/mary}.
-One good working example\footnote{Visit \url{http://dbpedia.org/page/Rhesus_macaque}
-and click on the concepts and properties to start browsing the web of linked data.}
-of this is DBPedia~\citep{dbpedia}.
+An interesting working example\footnote{Visit \url{http://dbpedia.org/page/Rhesus_macaque}
+and click on the concepts and properties to start browsing the web of linked data.} is DBPedia~\citep{dbpedia}.
 The process of accessing a URI to find more triples is called \emph{dereferencing the URI} (or simply dereferencing).
 
 \subsection{RDFS}
@@ -207,9 +247,9 @@ The standard approach to design an ontology, according to the literature,
 is to interview specialists of the field to which the ontology is related,
 or to absorb the established literature, or both.
 This work is being developed using both approaches.
-The second author is a data visualization specialist which was
+The second author is a data visualization specialist who was
 interviewed by the first author.
-Also, the first author is acquiring a deeper knowledge in the field.
+Also, the first author is engaged in acquiring a deeper knowledge of the field.
 
 \section{RESULTS AND DISCUSSION}\label{sec:res}
 % a word about AAVO, audiovisual, discerning core and expansions
@@ -220,14 +260,14 @@ visual analytics: the AAVO (Audiovisual Analytics Vocabulary and Ontology).
 The inclusion of ``audio'' is both a reminder of the possibilities
 available for using audio to represent data and perceive patterns,
 and a desirable incorporation of audio to visual analytics given
-audiovisual capabilites of current ordinary computers.
+audiovisual capabilities of current ordinary computers.
 
 The main concepts and their interrelations are presented in
 Section~\ref{sec:core} while an example extension is on Section~\ref{sec:ext}.
 Section~\ref{sec:voc} holds annotations for the vocabulary which are not promptly
 given by the previous sections.
 Some of the relations bellow are expressed using very recent 
-techniques that are described in~\cite{enhance}.
+techniques described in~\cite{enhance}.
 Their meaning, though, might be easily inferred.
 
 \subsection{AAVO core}\label{sec:core}
@@ -245,8 +285,8 @@ depicted in Figure~\ref{fig:minimum}:
 \begin{figure}[!htbp] %h or !htbp
 \vspace{-2pt}
 \begin{center}
-% \includegraphics[height=6.7cm,width=9cm]{../figs/aavo0.01_minimum.png}
-\includegraphics[width=\textwidth]{../figs/aavo0.01_minimum.png}
+% \includegraphics[height=6.7cm,width=9cm]{../figs/aavo0.01_minimum}
+\includegraphics[width=\textwidth]{../figs/aavo0.01_minimum}
 	\caption{AAVO core, discussed in Section~\ref{sec:core}.
 	A Visualization outputs a Visual Representation that can be an Image or an Animation.
 	A Visualization is suitable for a Dataset Type and for a Processing routine which transforms
@@ -262,13 +302,13 @@ AAVO core when it reaches maturity:
 		1) given beforehand and amenable to being proved or refuted by an Analysis,
 		2) shared by means of an Analysis,
 		or 3) presented by means of a Visualization.
-	\item Analysis: a set of procedures used to obtain understanding about
+	\item Analysis: a set of procedures used to gain understanding about
 		Data or a phenomenon.
 	\item Task/Purpose/Application: the goal or objective of an Analysis.
 \end{itemize}
-\noindent These concepts were not included in AAVO core (e.g. Figure~\ref{fig:minimum})
-because we still deciding on the best way to do so.
-From the definitions above, raises the question:
+\noindent These concepts have not yet been included in AAVO core (e.g. Figure~\ref{fig:minimum})
+because we are still considering the best way to do so.
+From the definitions above,  the question arises:
 should we also include Phenomenon among these core concepts?
 
 Other relations that can be added to the core (or to an extension, but
@@ -278,6 +318,16 @@ are directly related to the core):
 	\item Visual Representation is a Dataset Type.
 	\item Processing ``suitable for'' Data.
 	\item Visualization ``number of dimensions'' real (not double as stated for now).
+% * <cristina@icmc.usp.br> 2017-08-24T21:56:13.120Z:
+% 
+% \item Visualization ``number of dimensions'' real (not double as stated for now).  ??? don´t get it...
+% 
+% 
+% ^ <renato.fabbri@gmail.com> 2017-08-25T20:00:00.908Z:
+% 
+% Double has a certain resolution within the real numbers. A "number of dimensions" need not to be an integer, but might be a real value, not an approximation.
+%
+% ^.
 \end{itemize}
 
 An example of question still left unanswered:
@@ -303,7 +353,7 @@ nodes and edges.
 \begin{figure}[!htbp] %h or !htbp
 \vspace{-2pt}
 \begin{center}
-\includegraphics[width=\textwidth]{../figs/aavo0.01_exemplified.png}
+\includegraphics[width=\textwidth]{../figs/aavo0.01_exemplified}
     \caption{Example incorporation of less general concepts to AAVO: Statistical Test, MDS, Timeline, Z-Score, Network, etc.
 	A thorough consideration of this expansion of the AAVO core is at Section~\ref{sec:ext}.
 	In case this image is not being properly visualized in paper,
@@ -338,7 +388,7 @@ conceptualization that allows a formalization as linked data;
 2) of representing the knowledge in Visual Analytics
 to enable inference by machines.
 There are other uses for AAVO, uncovered in Section~\ref{sec:intro},
-for which there are conceptual models available~\citep{munzner,ward}.
+for which conceptual models are available~\citep{munzner,ward}.
 
 Potential further steps include:
 \begin{itemize}
@@ -346,15 +396,14 @@ Potential further steps include:
 		into the AAVO core.
 	\item Realizing AAVO expansions until the reached concepts can be linked
 		to other ontologies that are sound, used and maintained.
-	\item Using AAVO for obtaining interesting relations by means of automated
-		inference and for assisting a (audio)visual analytics software.
+	\item Using AAVO to obtain interesting relations by means of automated
+		inference and to assist a (audio)visual analytics software.
 \end{itemize}
 
 
 
 \subsection*{\textit{Acknowledgements}}
-The authors thank CNPq and FAPESP for the funding received while researching the topic of this article,
-the researchers of IFSC/USP and ICMC/USP for the recurrent collaboration in every situation
+The authors thank CNPq and FAPESP for the funding received while researching the topic of this article, the researchers of IFSC/USP and ICMC/USP for the recurrent collaboration in every situation
 where we needed directions for investigation.
 
 % ------------------------------------------------------------------------
@@ -384,7 +433,14 @@ where we needed directions for investigation.
 	Data. (2017, August 21). In Wikipedia, The Free Encyclopedia. Retrieved
 		22:31, August 21, 2017
 		, from \url{https://en.wikipedia.org/w/index.php?title=Data&oldid=796493851}
+        
+\bibitem[Wikipedia, 2017]{wikiVA}
+Visual analytics. (2017, July 1). In Wikipedia, The Free Encyclopedia. Retrieved
+14:51, August 29, 2017
+, from \url{https://en.wikipedia.org/w/index.php?title=Visual_analytics&oldid=788453746}
 
+\bibitem[Ellis \& Mansmann, 2010]{visMaster}
+Ellis, G., \& Mansmann, F. (2010). Mastering the information age solving problems with visual analytics. In Eurographics (Vol. 2, p. 5).
 \end{thebibliography}
 % ------------------------------------------------------------------------
 
@@ -403,3 +459,4 @@ where we needed directions for investigation.
 %\keywords{\em{Keywords in english}}
 
 \end{document}
+
