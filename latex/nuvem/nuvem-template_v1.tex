@@ -1,5 +1,19 @@
 \documentclass[letterpaper,10pt]{article}
 \usepackage{nuvem}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{hyperref} 	%% Use to fix Figure or Table: ex: \begin{table}[H]
+\hypersetup{
+	%pagebackref=true,
+	pdfcreator={LaTeX with abnTeX2},
+	pdfkeywords={abnt}{latex}{abntex}{USPSC}{trabalho acadêmico}, 
+	colorlinks=true,       		% false: boxed links; true: colored links
+	linkcolor=blue,          	% color of internal links
+	citecolor=blue,        		% color of links to bibliography
+	filecolor=magenta,      		% color of file links
+	urlcolor=blue,
+	allbordercolors=black,
+	bookmarksdepth=4
+}
 \usepackage[utf8]{inputenc}
 
 
@@ -13,11 +27,11 @@ Renato Fabbri$^2$}
 \email{$^1$marilia.m.pisani@gmail.com, $^2$renato.fabbri@gmail.com}
 
 \begin{abstract}
-Social participation had been growing on the last decade
-and had a drawback with the recent rise of conservative political parties 
+Social participation has been growing on the last decade though with a considerable
+drawback with the recent rise of conservative political parties 
 in various locations of the world.
-We aim to present a set of developments on linked social data
-and analysis over the last years, with a focus
+We aim to consider a set of developments on linked social data
+and analysis performed over the last years, with a focus
 on the potential use for the civil society and scientific academy.
 Various conceptualizations have been gathered by interviewing specialists
 and State authorities and have been validated by them and their institutions.
@@ -29,20 +43,20 @@ Social networks were reported as very stable and their language varies
 	Also, resources recommendation and experiments have been performed with such data.
 	How are we to articulate the gathering and analysis 
 	of such data with the needs of the civil society and the academy?
-	Will it sufice to deal with the private and State interests
+	Will it be valuable to deal with the private and State interests
 	that shape our society?
-	Does Anthropological Physics yield reasoable strategies
-	to collect and analyze data from our society?
-	How does the global semantic web of linked data~\cite{GGG}
+	Does Anthropological Physics yield reasonable strategies
+	to collect and analyze data from our social structures?
+	How does the global semantic web of linked data~\cite{losd}
 	relate to linked social data?
 \end{abstract}
 
 \section{Introduction}
-Social analytics is a term associated to Lars-Hendrik Schmidt~\cite{cite}
+Social analytics is a term associated to Lars-Hendrik Schmidt~\cite{wSA}
 in philosophy.
-One might also relate social analytics to social data mining,
+One might also relate social analytics to social data mining
 by extension of the terms: visual analytics, data analytics, social media analytics etc,
-being used nowadays~\cite{wVA,wDA,wSMA,wSNA}.
+being used nowadays (e.g. look for these terms in the English language Wikipedia).
 Interestingly, both social analytics 
 have among core practices the reporting of tendencies of the times.
 And they put emphasis on issues and analytical outcomes
@@ -55,7 +69,7 @@ imposed for living by technological advances~\cite{m1,m2,m3}.
 And the consideration of the authoritarian personality traces~\cite{au}
 have gained relevance due to unforeseen social phenomena
 such as the recent and worldwide rise of the right-winged manifestations
-and political representation~\cite{rise}.
+and political representation~\cite{rise,rise2}.
 
 On physics and computer sciences,
 both the advent of the complex networks
@@ -66,19 +80,19 @@ One enables forecast of properties
 and the use of natural laws for deriving understandings.
 The other provides the data that represents the real systems
 in scales that make them useful for management and
-scientific studies (including experiments as in Section~\ref{exp}).
+scientific studies (including experiments as in Sections~\ref{exp} and~\ref{self}).
 Social networking platforms are massively and constantly used and thus fed.
 They are most often elaborate suites of software with
 an interface for the user to interact with other users
 and often makes use of these recent scientific and technological
-developments.
+developments.\cite{tese}
 
 In this context,
 we advocate the analytic consideration
 of the Society by itself.
 There are many ways to achieve this,
-and it is performed to some extent.
-Our focus is on the mining of the data
+and it is performed to some extent~\cite{scriptLattes,losd,p5,an}.
+Our focus here is on the mining of the data
 derived from social platforms.
 It is not very trivial in our context
 of monetary obsession to achieve engagement
@@ -91,10 +105,10 @@ Core goals are:
 \begin{itemize}
 	\item Develop the critical view, on specialists and layman,
 		of social media and
-		management performed by State and private sector.
+		management performed by the State and the private sector.
 	\item Make advances in the data available for consideration
 		and the algorithms for analysis.
-	\item Implement or study the possibility implementation
+	\item Implement or study the possibility of implementation
 		of software systems.
 \end{itemize}
 
@@ -104,36 +118,50 @@ developments related to social systems and technology.
 There are methods, software and scientific discoveries
 that underpins them~\cite{stab,tese,kolm}.
 
-\subsection{Social participation data}
+\subsection{Social participation data}\label{losd}
 Data from Facebook, Twitter, Email lists, IRC Channels, ParticipaBR,
 Cidade Democrática and AA have been translated into linked data (RDF)
-and has been named the LOD (Linked Open Social Data~\cite{lod}).
+and has been named the LOD (Linked Open Social Data~\cite{losd}).
 Initial OWL ontologies were derived from the data by automated routines.
-The dataset is oriented towards scientific research
+The dataset is oriented towards general scientific research
 and the development of analytic interfaces~\cite{p1,p2,p3,p4,p5}.
-Even so, it has been used by participants of a SESC oficina~\cite{sesc},
-and has received some attention from the scientific community~\cite{nexos,tese}.
+Even so, it has been used e.g. by participants of a SESC workshop
+and has received some attention from the scientific community~\cite{mariliaNexos,tese},
+and mining of the data revealed very stable patterns as predicted by natural laws
+and strong differentiation of the language of participants across hubs,
+intermediary and the periphery~\cite{stab,tese}. 
 
-\subsection{Ontologies}
+\subsection{Ontologies}\label{ont}
 Beyond the ontologies mentioned in the last section,
-there are the social participation ontologies that describe
+there are social participation ontologies that describe
 social participation instances and mechanisms~\cite{p5}.
-They are: 
+Such instances and mechanisms are:
+Conference (Conferência), Forum (Fórum),
+Committee (Comitê), Council (Conselho), Ombudsman (Ouvidoria),
+Public Consultation (Consulta Pública), Dialog Table (Mesa de diálogo),
+Monitoring Table (Mesa de Monitoramento), Intercouncil Forum (Fóruns Interconselhos),
+Audience (Audiëncia),
+Virtual Environment (Ambiênte Virtual).
+They received additional ontologies relating them to documents and
+larger scopes.
+
 These ontologies are contextualized by the whole semantic web
-(or Giant Global Graph~\cite{ggg})
+(or Giant Global Graph~\cite{losd})
 and by other social participation ontologies:
 the OPa (Ontology of ParticipaBR~\cite{p5}), the OPS (Ontology of Social Participation~\cite{ops}),
-the OCD (Ontology of Cidade Democrática~\cite{p5}), the OAA (Ontology of AA~\cite{oaa}).
-There are minor ontologies, such as the one about the Caixa Mágica~\cite{cm}.
-These OWL ontologies (and SKOS vocabularies that most of them have) enable
+the OCD (Ontology of Cidade Democrática~\cite{p5}), the OAA (Ontology of AA~\cite{p5}).
+There are minor ontologies, such as the one about the Magic Box (Caixa Mágica~\cite{cm},
+a social participation wifi gadget).
+These OWL ontologies (and the SKOS vocabularies which most of them have, following
+a pattern suggested in~\cite{ont}) enable
 sound conceptual discussions, navigation by humans and machine (data discovery),
- automated inference, and data organization, integration and linkage by means of conceptualizations.
+ automated inference; and data organization, integration and linkage by means of conceptualizations.
 It seems reasonable to use the ontologies to link the social participation data
 and enable a scalable participatory legacy of machine- and human- friendly representation
 of data for navigation, query and analysis, automated inference
 and conceptual considerations.
 
-\subsection{Critical theory and anthropological physics}
+\subsection{Critical theory and anthropological physics}\label{exp}
 The potential for prejudice and the study of the self
 were considered in~\cite{imp,stab,tese}.
 In summary, the hub, intermediary and peripheral sectorialization
@@ -143,40 +171,47 @@ by the comparison of the degree (or strength) distribution
 against that of an Erdös-Rényi network.
 Hubs are valued by literature
 (although the intermediary are also reported as authorities
-and structuraly important agents)~\cite{ega},
-which favors the potential for prejudice.
+and structuraly most important agents)~\cite{ega},
+which favors the potential for prejudice
+of a quantitative classification (or typology)
+of human beings..
 At the same time, the roles participant
+vary in time constantly~\cite{stab,tese}
+and across scales and networks,
+which minimized the potential
+for prejudice of such classification.
 
-
-The cold-blooded reception of the reality
+We also considered the cold-blooded reception of the reality
 enabled technologial devices such as drones~\cite{drones}.
+(((últimos trabalhos marilia, e.g. impulso,
+talvez com foco em tecnologia, talvez passar
+este parágrafo para o último e fechar a seção com ele))))
 
-<últimos trabalhos marilia, e.g. impulso>
 
-
-The anthropological aspect of observing natural
+The Anthropological Physics is concerned
+with the observation of natural
 phenomena in the social structures
-of the observer him/herself has been
-considered in~\cite{an,an2,imp,tese}.
+of the observer him/herself and has been
+considered in.
 Comte talked about anthropological physics,
 but it had the sense which physical (or biological or natural)
-anthropology has, which is a main field of anthropology
+anthropology has, which is a branch of anthropology
 (the other is social anthropology).
 Anthropological physics, in the sense we use and understand correct,
-is physics (research on the natural phenomena of complex networks)
+is physics (research on the natural phenomena mainly of complex networks)
 with anthropological aspects.
 The writing and study of diaries is a traditional ethnographic asset,
 which resembles the collection and study of one's data by the person itself,
 social data.
 The current guidelines are centered on keeping the process open,
 using free and open source tools and file formats,
-and publicly accessible repositories of software, gadgets, data, etc;
+and publicly accessible repositories of software, gadgets, data, writings, etc;
 while gathering and studying the social data related to the researcher
-(and other data if needed and afterwards).
+(and other data if needed and afterwards).~\cite{an,an2,imp,tese}
 
 
 
-\subsection{Self-transparency, AA and the fundamental cycle}
+\subsection{Self-transparency, AA and the fundamental cycle}\label{self}
 A system for sharing work, development and research processes
 (actually, any dedication)
 is described in~\cite{aa,aa2}.
@@ -188,26 +223,61 @@ be linked to sessions and screencasts or be blind-reviewed
 by other users.
 The methodology and software have initiated discussions
 e.g. about documenting academic dedication not only though
-documents (e.g. articles, books) and participation (e.g. conferences, thesis defense),
-which would enable one to dedicate more time to individual
+traditional documents (e.g. articles, books) and participation (e.g. conferences, thesis defense),
+and currently performed e.g. by Lattes.
+Such documentation (log of dedications)
+would enable one to dedicate more time to individual
 tasks and make more paced and relevant contributions.
 
-Also, the conception of the 
+The concept has reached other initiatives, such
+as the Brazilian federal portal of social participation
+ParticipaBR.
+And have incited discussions that yield interesting concepts,
+such as the fundamental cycle,
+which is an idealized interaction between
+Society and a management sector of it,
+such as the State.
+The individuals that feel the need to
+change the way living is imposed by the State
+should be able to act on the State,
+have results and get paid for the time they put
+into performing the social participation.
+The existence of such a cycle would erradicate
+extreme poverty, as the poor would be paid
+to act and change State measures for the poor for
+or a community.
+Thus, the ideal fundamental cycle is a social
+participation model which is very shabbily practiced
+and is defined by giving the one in need good conditions
+to change the context which puts he/she in need.
+The mechanisms or institutions that give the
+individual the conditions and means to act
+is then called the State or Government or,
+more accurately nowadays, the Institutionalized Power.
+Notice that, as such, the institutionalized power
+have the goal to allow the interference 
+of the individual in its management
+and that this is extended to the private initiatives.
+Social participation in the private sector
+seems to be very incipient.
+
 
 
 \subsection{Audiovisual Analytics platform}
-for social data, with focus on network and textual
-		data.                
+Described in~\cite{nuvem2}, it is an envisioned audiovisual analytics
+software for social data, with focus on network and textual data.
+It will also be sent to the I Workshop @NUVEM, together with
+this document, for separate appreciation.
 
 \section{What shall we do?}
 Most certainly we will
-make the LOSD and social participation ontologies (Sections~\ref{losd} and~\cite{ont})
+make the LOSD and social participation ontologies (Sections~\ref{losd} and~\ref{ont})
 available e.g. on DataHub and Data.World.
 In the Nexos research network, we
 considered a number of times to study authoritarian personality traces~\cite{au}
 on this data.
 And to further consider the Anthropological Physics aspects that
-arise from studying our own social structures~\cite{af,af2}.
+arise from studying our own social structures~\cite{an,an2}.
 The self-transparency is having some attention in scientific writings
 and hacks~\cite{aa,aa2} but seems to be lacking user bases.
 The developments for Audiovisual Analytics are incipient
@@ -215,18 +285,19 @@ and has the development focus of only one researcher and developer.
 The Nexos research network is very active nation wide.
 It has an overall tendency to tackle subjects within the
 critical theory tradition and thus considers the society
-and potential enhancements through criticism of its organization.
+and potential enhancements through criticism of its organization,
+which is valuable for the technological developments being made.
 
-Research groups @Nuvem of Cloud Computing and Intelligent Societies have 
+Research groups @Nuvem of Cloud Computing and Intelligent Societies might have 
 further context to share about these issues.
-For example, are there SparQL endpoints with social participation
+For example, are there SparQL endpoints with (Brazilian) social participation
 (including self-transparency) data?
 Is it necessary to contact lawyers to
 better know the limits of our possibilities
 to gather and research our social data within
 the Anthropological Physics perspective
-and are there very well known guidelines?
-Is there more data participatory linked data available
+and are there well known guidelines?
+Is there more participatory linked data available
 in Brazil? Ontologies?
 We might use directions 
 on better linking LOSD to the semantic web
@@ -238,59 +309,148 @@ and to develop an audiovisual analytics
 software
 (persistence, web?, analysis methods, audiovisual rendering).
 
-How to enable a self-transparency user base?
+Other questions we have that might benefit from discussion and entail collaboration are:
+how to enable a self-transparency user base?
 Where to keep the linked data?
 How to manage the ontologies and keep their
 constant development (as needed and predicted in the literature)?
-How to achieve a reasonable posture
-and use of our social (open linked) data?
+How to achieve a reasonable 
+use of our social (open linked) data?
 Is it possible to have an audiovisual analytics
 platform with our own (scraped) social data,
-with facilities for media rendering,
+with facilities for media rendering and
 interaction experiments (collection and diffusion of information),
 that enables the user base and interested parties to
 collective gather social data, analysis and conceptualizations?
 Is the societal consideration of our social data
 relevant for equilibrium with the State and private sectors?
-
-
-
-
-
-% keep the data online
-% develop an audiovisual analytics software
-% maintain partnerships between humanities and hard sciences
-
-    * Como podemos trabalhar o tema:
-    conexão com Nuvem, com Nexos e com IFSC/ICMC.
-
-\section{Conclusions}
+Is it possible to achieve social participation in the private sector,
+e.g. to have civil representation in the chair of companies,
+to regulate matters such as YouTube adds in Google,
+nutrient standards in McDonald's,
+and other things in other major and minor institutions?
 
 \begin{thebibliography}{99}
 
-\bibitem{krishnan00} E. Krishnan, A. M. Shan, T. Rishi, L. A. Ajith, C. V.
-Radhakrishnan, \textit{On-line Tutorial on \LaTeX{}},
-``Mathematics'' (Indian \TeX{} Users Group, 2000), \\
-\url{http://www.tug.org/tutorials/tugindia/chap11-scr.pdf}.
+\bibitem{losd}
+	Fabbri, R., \& de Oliveira, O. N. (2016). Linked Open Social Database. Github repositories, from \url{https://github.com/ttm/linkedOpenSocialDatabase/raw/master/paper.pdf}
 
-\bibitem{vantrigt97} C. van Trigt, ``Visual system-response functions and estimating reflectance,''
-J. Opt. Soc. Am. A \textbf{14}, 741--755 (1997).
+\bibitem{pnud5}
+Fabbri, R. (2014). Social participation ontologies and rules to fuel a social participation linked data cloud.
+	Technical report for the United Nations Development Program.
+		From \url{https://github.com/ttm/pnud5/raw/master/latex/produto.pdf}
 
-\bibitem{masters93} T. Masters, \emph{Practical Neural Network Recipes in C++} (Academic, 1993).
+\bibitem{tese}
+Fabbri, R. (2017). Topological stability and textual differentiation in human interaction networks:
+		statistical analysis, visualization and linked data. Doctoral thesis.
+		From \url{https://github.com/ttm/thesis/raw/master/thesis-rfabbri.pdf}
 
-\bibitem{shoop97} B. L. Shoop, A. H. Sayles, and D. M. Litynski, ``New devices for optoelectronics: smart pixels,''
-in \emph{Handbook of Fiber Optic Data Communications},
-C. DeCusatis, D. Clement, E. Maass, and R. Lasky, eds. (Academic, 1997), pp. 705--758.
+\bibitem{stab}
+Fabbri, R., Fabbri, R., Antunes, D. C., Pisani, M. M., \& de Oliveira, O. N. (2017). Temporal stability in human interaction networks. Physica A: Statistical Mechanics and its Applications.
 
-\bibitem{kalman76} R. E. Kalman,``Algebraic aspects of the generalized inverse of a rectangular matrix,'' in
-\emph{Proceedings of Advanced Seminar on Generalized Inverse and Applications}, M. Z. Nashed, ed. (Academic, 1976), pp. 111--124.
+\bibitem{wSA}
+	Social analytics. (2017, February 5). In Wikipedia, The Free Encyclopedia. Retrieved 11:37, November 12, 2017, from \url{https://en.wikipedia.org/w/index.php?title=Social\_analytics\&oldid=763744127}
 
-\bibitem{craig96} R. Craig and B. Gignac, ``High-power 980-nm pump lasers,''
-in \emph{Optical Fiber Communication Conference}, Vol. 2 of 1996 OSA Technical Digest Series (Optical Society of America, 1996), paper ThG1.
+\bibitem{au}
+	Adorno, T. W., Frenkel-Brunswik, E., Levinson, D. J., \& Sanford, R. N. (1950). The authoritarian personality.
 
-\bibitem{steup96} D. Steup and J. Weinzierl, ``Resonant THz-meshes,''
-presented at the Fourth International Workshop on THz Electronics, Erlangen-Tennenlohe, Germany, 5--6 Sept. 1996.
+\bibitem{rise}
+Kaufmann, E. (2017). Interview with Eric Kaufmann: cultural values and the rise of right-wing populism in the West. British Politics and Policy at LSE.
 
+\bibitem{rise2}
+	Gaarsted, J. B., \& Agustín, L. R. (2017). The rise of right-wing populism.
+
+\bibitem{scriptLattes}
+	Mena-Chalco, J. P., \& Júnior, C. E. S. A. R. (2013). Prospecção de dados acadêmicos de currículos Lattes através de Scriptlattes. Bibliometria e Cientometria: reflexões teóricas e interfaces. São Carlos: Pedro \& João.
+
+\bibitem{kolm} 
+  R.~Fabbri and F.~G.~De León,
+  ``A Statistical Distance Derived From The Kolmogorov-Smirnov Test: specification, reference measures (benchmarks) and example uses,''
+  Anais do XX ENMC - Encontro Nacional de Modelagem Computacional e
+  VIII ECTM - Encontro de Ci\^encias e Tecnologia de Materiais, Nova Friburgo,
+  RJ - 16 a 19 Outubro 2017
+		[arXiv:1711.00761 [physics.data-an]]. Available at: \url{https://arxiv.org/abs/1711.00761}.
+
+\bibitem{p1}
+	Fabbri, R. Primeira ontologia do Portal Federal de Participação Social Descrição e código OWL: Ontologia do ParticipaBR, 2014.
+    United Nations Development Programme and Brazilian Presidency of the Republic. Available at \url{https://sourceforge.net/p/labmacambira/fimDoMundo/ci/master/tree/textos/ontologia/ontologiaParticipa\_.pdf}
+
+\bibitem{p2}
+    Fabbri, R. United Nations Development Programme: ParticipaBR context, triplification of data and example of usage, 2014.
+    Available at \url{http://sourceforge.net/p/labmacambira/fimDoMundo/ci/master/tree/textos/SparQL/triplificaDisponibiliza.pdf?format=raw}
+
+\bibitem{p3}
+    Fabbri, R. United Nations Development Programme: Tools for content classification in the ParticipaBR Brazilian federal portal of social participation, 2014.
+    Available at \url{https://github.com/ttm/pnud3/blob/master/latex/produto.pdf?raw=true}
+
+\bibitem{p4}
+    Fabbri, R. United Nations Development Programme: Adaptations and increments for the ParticipaBR Brazilian federal portal of social participation, 2014.
+    Available at \url{https://github.com/ttm/pnud4/blob/master/latex/produto.pdf?raw=true}
+
+\bibitem{p5}
+Fabbri, R. Social participation ontologies and rules to fuel a social participation linked data cloud, 2014.
+	Technical report for the United Nations Development Program, made with the Brazilian Presidency.
+		Available at \url{https://github.com/ttm/pnud5/raw/master/latex/produto.pdf}
+
+\bibitem{p5}
+Fabbri, R. Social participation ontologies and rules to fuel a social participation linked data cloud, 2014.
+	Technical report for the United Nations Development Program, made with the Brazilian Presidency.
+		Available at \url{https://github.com/ttm/pnud5/raw/master/latex/produto.pdf}
+
+\bibitem{ops}
+	Fabbri, R., de Luna, R. B., Martins, R. A. P., Amanqui, F. K. M., Moreira, D. D. A., Oliveira Jr, O. N. O. (2015). Social Participation Ontology: community documentation, enhancements and use examples. arXiv preprint arXiv:1501.02662. Available at \url{https://github.com/ttm/ops/raw/master/plosOne/plosComImagens.pdf}
+
+\bibitem{cm}
+	Fabbri, R. Magic Box Ontology.
+		Available at \url{https://github.com/ttm/pnud5/raw/master/latex/produto.pdf}
+
+\bibitem{imp}
+	Fabbri, R. Redes complexas para redes sociais: introdução, aspectos críticos e software, 2017.
+		Revista Impulso,
+		ISSN 2236-9767,
+		DOI 10.15600/2236-9767/impulso.v27n69p65-75.
+		Disponível em
+		\url{https://www.metodista.br/revistas/revistas-unimep/index.php/impulso/article/view/3367}.
+
+\bibitem{ont} 
+  R.~Fabbri and M. Pisani,
+  ``Enhancements of linked data expressiveness for ontologies,''
+  Anais do XX ENMC - Encontro Nacional de Modelagem Computacional e
+  VIII ECTM - Encontro de Ci\^encias e Tecnologia de Materiais, Nova Friburgo,
+  RJ - 16 a 19 Outubro 2017
+		Available at: \url{https://github.com/ttm/equanimousScalefree/raw/master/article/article.pdf}.
+
+\bibitem{ega} 
+  R.~Fabbri and M. Pisani,
+  ``Egalitarian aspects of scale-free networks,''
+  Anais do XX ENMC - Encontro Nacional de Modelagem Computacional e
+  VIII ECTM - Encontro de Ci\^encias e Tecnologia de Materiais, Nova Friburgo,
+  RJ - 16 a 19 Outubro 2017
+		Available at: \url{https://github.com/ttm/equanimousScalefree/raw/master/article/article.pdf}.
+
+\bibitem{an}
+	Fabbri, R. What are you and I? [anthropological physics fundamentals], 2015. Available at \url{https://www.academia.edu/10356773/What\_are\_you\_and\_I\_anthropological\_physics\_fundamentals\_}
+
+\bibitem{an2}
+	Anthropological physics and social psychology in the critical research of networks. Complex Networks Digital Campus (CS-DC'15).
+	Em \url{http://cs-dc-15.org/papers/cognition/social-psychology/anthropological-physics-and-social-psychology-in-the-critical-research-of-networks/}
+
+\bibitem{aa}
+	Fabbri, R., Fabbri, R., Vieira, V., Penalva, D., Shiga, D., Mendonça, M., Negrao, A., Zambianchi, L., \& Thumé, G. (2013). AA: The Algorithmic Autoregulation (Distributed Software Development) Methodology. RESI. From \url{https://arxiv.org/abs/1604.08255}
+
+\bibitem{aa2} 
+  R.~Fabbri,
+  ``The Algorithmic-Autoregulation (AA) Methodology and Software: a collective focus on self-transparency,''
+  Anais do XX ENMC - Encontro Nacional de Modelagem Computacional e
+  VIII ECTM - Encontro de Ci\^encias e Tecnologia de Materiais, Nova Friburgo,
+  RJ - 16 a 19 Outubro 2017
+		Available at: \url{https://github.com/ttm/ensaaio/raw/master/emc/article.pdf}.
+
+\bibitem{nuvem2} 
+  R.~Fabbri and M. Pisani
+  ``Audiovisual Analytics of social data,''
+  I Workshop @NUVEM, UFABC campus de Santo André,
+		Available at: \url{}.
 \end{thebibliography}
 
 
