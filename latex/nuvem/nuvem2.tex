@@ -34,13 +34,15 @@
 	and the observer or user should have it, the employment of visual cues is an obvious,
 	and sometimes considered optimized, strategy because of the efficiency and
 	complexity of our visual cognition.
-	Our sonic cognition is sometimes considered of greater complexity,
+	Our auditory cognition is sometimes considered of greater complexity,
 	due to patterns of music and spoken language.
 	How to correctly formalize the mapping of data, information
 	and knowledge to physical stimuli
 	and then to the perceived stimuli
 	respecting the Weber-Fechner and Steven's laws at least for visual
 	and auditory cues?
+	How to correctly express data visualization theory and practice,
+	relating datatypes to processing routines and suitable audiovisualizations?
 \end{abstract}
 
 \section{Introduction}
@@ -52,8 +54,8 @@ knowledge.
 The mapping of data to audiovisual cues
 involves a number of routines, conceptual frameworks,
 and data.
-The scaling and integration factors are decisive in setting
-of Big Data such as in social data mining.
+The scaling and integration factors are decisive in settings
+of big data such as in social data mining.
 The study of data that expresses human social systems
 poses ethical and conceptual challenges~\cite{an,an2}.
 An overview of the Linked Open Social Data translated to
@@ -74,7 +76,7 @@ In this section, we focus on current efforts around Audiovisual Analytics.
 AAVO is a first tentative ontology for Audiovisual Analytics.
 Figure~\ref{aavo} depicts the AAVO Core,
 and both Core and Extended AAVO are well described in~\cite{aavo}.
-The following concepts are envisioned for the core
+The following concepts/classes are envisioned for the core
 but not yet implemented:
 Hypothesis, Analysis, Task/Purpose/Application.
 Some relations seem less fundamental then others,
@@ -137,7 +139,7 @@ has been envisioned with the following characteristics:
 		It will probably be JavaScript with Vim-like one-liners and scripting.
 		(The written interface expresses a very broad space
 		of possible commands.)
-  \item Linked data to achieve a formal and browse-friendly representation of data for both humans and machines;
+  \item Linked data to achieve a formal and browsing-friendly representation of data for both humans and machines;
 	  for a unified consideration of both data and knowledge architecture;
 facilitates the linkage of metadata from users;
 facilitates resources recommendations.
@@ -149,23 +151,24 @@ facilitates resources recommendations.
 	  (maybe have facilities to record mouse movement, clicks and keyboard strokes).
 \end{itemize}
 
-The temporal dynamic of the interface is useful to do a rapid scan of the data by parts.
+The temporal dynamic of the interface is useful to make a rapid scan of the data by parts.
 Observing data by parts is a core procedure in mining big data.
 Persistence is also valued for the purpose of analyzing big data.
 Complex networks and text yield a broad user base
-and set of knowledge fields which might be studied withing the system.
-The focus on social systems entails analysis results of interest
+and set of knowledge fields which might be studied with help of such system.
+The focus on social structures entails analysis results of interest
 to scientific research, State and private sectors.
 Art in current and envisioned developments
-is useful for formal documents and favors the engagement
+is useful for favoring an attentive interaction of the user,
+the enhancement of formal documents and the engagement
 of layman.
 
 \subsection{Perceptual framework}
 Frequency and intensity are related to pitch and volume
 through the Weber-Fechner law.
 One might also think about durations on the same sense.
-Visual estimuli, on the other hand, seem to be 
-more often modeled as the Steven's law (is this true?).
+Visual stimuli, on the other hand, seem to be 
+more often modeled by the Steven's law (is this true?).
 Is it possible to relate frequency and intensity to
 pitch and loudness through Steven's law?
 Is the perception of visual cues also fit by Weber-Fechner?
@@ -183,6 +186,7 @@ where p is the (subjective) magnitude of the perceived stimuli,
 $X$ and $\alpha$ depend on the stimuli,
 and $e_0$ and $k$ depend on the the units used.
 $\Delta p$ is an interval, a distance, in the perceived magnitude.
+$x$, $\alpha$, $e_0$ and $k$ are usually considered constants.
 
 In equally spaced samples of the stimuli (e.g. in PCM audio),
 the sample values might express amplitude or frequency.
@@ -196,20 +200,20 @@ The components are sinusoids whose amplitude
 is duration.
 The durations are the sample values,
 each value corresponding to a sample separated
-by a virtual distance.
+by a virtual (unitary) distance.
 % keep static amplitude or phase
 % in virtual and real-simed Fourier transfoms
 
 Related to sound, most traditional music notation and qualities
 respect the Weber-Fechner law, with note grids (e.g. semitones, octaves),
 respecting the logarithm of frequency: interval$=log_2(f_1/f_0)$,
-loudness$=log_10(p_1/p_0)$.
+loudness$=log_{10}(p_1/p_0)$.
 Duration seems also to be conceptualized as such
 because musical notation uses the division in two (simple, imperfectus),
 amd three (perfectus) yielding a grid having
 $d_i=d_{i+1}/2$ and $d_i=d_{i+1}/3$.
 $durations=2^{x-i}$ and $=3^{x-i}$.
-Which implies $log_2(dur) = x-i \Rightarrow i = log_2(X/dur), x = log_2X$.
+Which implies $log_2(dur) = x-i \Rightarrow i = log_2(X/dur),\;x = log_2X$.
 A Weber-Fechner compliant relation
 between the number of the durations and
 depth of the division x-i = (4, 8, 16) for simple,
@@ -237,7 +241,7 @@ observe linguistic differences among the network participants;
 the use of Wordnet and token-oriented methods for text mining;
 and current partnership with researchers in physics, computer science,
 mathematics, philosopy and social sciences, clinical and social psychology,
-give some of the support for our endeavors.
+give some of the support for our endeavors.~\cite{tese}
 
 \subsection{What to do?}
 We will surely integrate the envisioned concepts into AAVO Core.
@@ -246,15 +250,15 @@ maybe for concept proofs or simple prototyping.
 
 With the research groups @Nuvem, 
 especially those audiovisual and societal,
-relate the missing concepts in AAVO,
-enhance the software design of the system.
-Know about the right tools for visualizing
+we might relate the missing concepts in AAVO,
+or enhance the software design of the system;
+try to find more about the right tools for visualizing
 ontologies and social data.
-For knowing about pertinent analysis methods
+about pertinent analysis methods
 and known conceptualizations.
-might want to formalize their own conceptualizations,
+@Nuvem researchers might want to formalize their own conceptualizations,
 and concepts related to AAVO might have similar developments
-or which are confluent (e.g. symbiotic)
+or be confluent (e.g. symbiotic)
 with Section~\ref{current}: software,
 theoretical framework, research and institutional experiments and equipment,
 linked data, and other initiatives or knowledge.
