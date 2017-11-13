@@ -1,5 +1,20 @@
 \documentclass[letterpaper,10pt]{article}
 \usepackage{nuvem}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{hyperref}
+\hypersetup{
+	%pagebackref=true,
+	pdfcreator={LaTeX with abnTeX2},
+	pdfkeywords={abnt}{latex}{abntex}{USPSC}{trabalho acadêmico}, 
+	colorlinks=true,       		% false: boxed links; true: colored links
+	linkcolor=blue,          	% color of internal links
+	citecolor=blue,        		% color of links to bibliography
+	filecolor=magenta,      		% color of file links
+	urlcolor=blue,
+	allbordercolors=black,
+	bookmarksdepth=4
+}
+\usepackage[utf8]{inputenc}
 
 
 \begin{document}
@@ -15,33 +30,17 @@
 \begin{abstract}
 	Audiovisual analytics of social data is useful for State and private
 	management, scientific and individual endeavors.
-	If you have data as information in a computer, and wants to
-	transmit it to an observer or user, the use of visual cues is an obvious,
-	and sometimes considered optimized, choice because of the efficiency and
+	If there is data, information or knowledge in a computer,
+	the observer or user should have it, the use of visual cues is an obvious,
+	and sometimes considered optimized, strategy because of the efficiency and
 	complexity of our visual cognition.
 	Our sonic cognition is sometimes considered of greater complexity,
 	due to patterns of music and spoken language.
-	How to correctly formalize the mapping of data to physical stimuli
+	How to correctly formalize the mapping of data, information
+	and knowledge to physical stimuli
 	and then to the perceived stimuli
-	respecting the Webner-Fechner and Steven's laws?
-	Related to sound, most traditional notation and musical qualities
-	respect the Webner-Fechner law, with note grids (e.g. semitones, octaves),
-	respecting the logarithm of frequency: iterval$=log_2(f_1/f_0)$,
-	loudness$=log_10(p_1/p_0)$
-	Duration seems to be conceptualized as such
-	because musical notation uses the division in two (simple, imperfectus),
-	amd three (perfectus) yielding a grid having
-	$d_i=d_{i+1}/2$ and $d_i=d_{i+1}/3$.
-	$durations=2^{x-i}$ and $=3^{x-i}$.
-	Which implies $log_2(dur) = x-i$.
-	A Webner-Fechner compliant relation
-	between the number of the durations and
-	depth of the division x-i = (4, 8, 16) for simple,
-	(3, 9, 12) for compound,
-	(5,7,13) complex.
-	6 is compound in traditional music theory,
-	but is the only one that relates periods of 2 and 3,
-	subdivision of 2 and 3.
+	respecting the Weber-Fechner and Steven's laws at least for visual
+	and auditory cues?
 \end{abstract}
 
 \section{Introduction}
@@ -51,36 +50,50 @@ such as by automated inferences,
 and sound conceptual considerations of both domain and context
 knowledge.
 The mapping of data to audiovisual cues
-involve a number of routines, conceptual frameworks,
+involves a number of routines, conceptual frameworks,
 and data.
 The scaling and integration factors are decisive in setting
 of Big Data such as in social data mining.
 The study of data that expresses human social systems
 poses ethical and conceptual challenges~\cite{an,an2}.
-An overview of the Linked Open Social Data gathered
-in RDF and related ontologies and vocabularies
+An overview of the Linked Open Social Data translated to
+RDF and related ontologies and vocabularies
 can be found in~\cite{nuvem1,tese,losd}.
 Some limitations of current linked data standards
 are described and potential solutions given in~\cite{ont}.
 
 \section{Current Framework}\label{current}
-We have strived to obtain relevant algebraic, empiric, conceptual,
+We obtained compelling algebraic, empiric and conceptual
 analyses of social structures~\cite{tese,stab},
-often supported by software, which is a very formal representation
-of what is being performed (although also very incomplete).
+often supported by software, which is a very efficient
+way to represent
+what is being performed (although also very incomplete).
 In this section, we focus on current efforts around Audiovisual Analytics.
 
-\subsection{AAVO}
+\subsection{AAVO}\label{sec:aavo}
 AAVO is a first tentative ontology for Audiovisual Analytics.
-Figure~\cite{aavo} depicts the AAVO Core,
-and both Core and Extended AAVO are well described in~\cite{aavoA}.
-The following concepts are envisioned for the core:
-
-And it might receive other layers of conceptualizations,
+Figure~\ref{aavo} depicts the AAVO Core,
+and both Core and Extended AAVO are well described in~\cite{aavo}.
+The following concepts are envisioned for the core
+but not yet implemented:
+Hypothesis, Analysis, Task/Purpose/Application.
+Some relations seem less fundamental then others,
+which might be expressed using the techniques described
+in~\cite{ont}.
+AAVO is very incipient, and will most probably receive
+other layers of conceptualizations beyond Core and Extended,
 such as for data type, colors, charts, etc.
 
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=15cm]{../figs/aavomin}
+\caption{A graphical representation of current AAVO Core.
+	More information in Section~\ref{sec:aavo}.}\label{aavo}
+\end{figure}
+
 Its purposes are: automated inferences and recommendations on
-contexts involving data visualization;
+contexts involving data visualization (e.g. for suitable visualizations given a
+dataset or vice-versa);
 enable relevant theoretical discussions by having an
 established and formal conceptualization;
 provide a representation of data that is friendly for
@@ -90,16 +103,16 @@ provide the conceptual and data architecture for
 the audiovisual analytics software described in
 the next section.
 
-\subsection{An audiovisual analytics platform of social systems}
-A software system, a platform for audiovisual analytics of big data
-have been envisioned which have the following characteristics:
+\subsection{An audiovisual analytics platform for social systems}\label{sys}
+A software system, a web platform for audiovisual analytics of big data,
+has been envisioned with the following characteristics:
 \begin{itemize}
   \item Interface has capabilities of making automated and periodic changes of
 	  the presentation of the content (data and analyses).
 		This entails a fractal and musical consideration
 		of the audiovisualzations.
-		User might pause and set changing patterns..
-  \item The simultaneous use of both the vision and hearing channels.
+		User might pause and set changing patterns.
+  \item The simultaneous use of both the vision and auditory channels.
 	  User might mute or focus on the sonic cues.
   \item The system has the purpose of providing an aesthetic experience
 	  to the user.
@@ -121,6 +134,7 @@ have been envisioned which have the following characteristics:
 		Sharing of media to non-users and for presenting results.
   \item A written interface to control the system which should be
 	  suitable for scripting, one line commands, keyboard shortcuts.
+		It will probably be JavaScript with Vim-like one-liners and scripting.
 		(The written interface expresses a very broad space
 		of possible commands.)
   \item Linked data to achieve a formal and browse-friendly representation of data for both humans and machines;
@@ -130,25 +144,99 @@ facilitates resources recommendations.
   \item Emphasis on the analysis of networks and text (and their simultaneous analysis),
 	  reason why it is fit for social networks, but also for general complex networks
 		and textual data.
-  \item Designed to be enhanced with use by means of tests with users, of analyses of sessions and states
+  \item Designed to be enhanced with use by means of tests with users,
+	  and of analyses of sessions and states
 	  (maybe have facilities to record mouse movement, clicks and keyboard strokes).
 \end{itemize}
 
-The temporal dynamic of the interface is useful to do a rapid scan of the data by parts
+The temporal dynamic of the interface is useful to do a rapid scan of the data by parts.
 Observing data by parts is a core procedure in mining big data.
 Persistence is also valued for the purpose of analyzing big data.
 Complex networks and text yield a broad user base
 and set of knowledge fields which might be studied withing the system.
 The focus on social systems entails analysis results of interest
-to both the scientific research, and State and private sectors.
-The artistic course of current and envisioned developments
-is useful for formal documents but also favors the engagement
+to scientific research, State and private sectors.
+Art in current and envisioned developments
+is useful for formal documents and favors the engagement
 of layman.
 
 \subsection{Perceptual framework}
-Link to AAVO: the three sampling groups.
+Frequency and intensity are related to pitch and volume
+through the Weber-Fechner laws.
+One might also think about durations on the same sense.
+Visual estimuli, on the other hand, seem to be 
+more often modeled as the Steven's law.
+Is it possible to relate frequency and intensity to
+pitch and loudness through Steven's laws?
+Is the perception of visual cues also fit by the Weber-Fechner?
+The Steven's law is a power law while Weber-Fechner is an exponential
+law.
+This entails:
+\begin{equation}
+	\Delta p = log_X(e_1/e_0)
+\end{equation}
+\noindent for Weber-Fechner and
+\begin{equation}
+	p = k.e_1^\alpha
+\end{equation}
+\noindent for Steven's,
+where p is the (subjective) magnitude of the perceived stimuli,
+$X$ and $\alpha$ depend on the stimuli,
+and $e_0$ and $k$ depend on the the units used.
+
+In equally spaced samples of the stimuli (e.g. in PCM audio),
+the sample values might express amplitude or frequency.
+If the sample values represent durations, the separation
+between samples looses its meaning, but enables a Fourier
+analysis in a 'virtual' or 'imaginary' space.
+
+The possible equations relating physical and perceived stimuli
+should be integrated to AAVO.
+
+
+========
+
+
+	Some perception measurements are very consistently represented by
+	exponentil laws, such as betweeen pich and frequency.
+	Loudness is also more or less consistently related by exponentials
+	to the power, intensity or amplitude for a fixed frequency or spectrum.
+	Visual cues, on the other hand, present consistent power laws.
+
+	mention the human processor model.
+
+
+	Related to sound, most traditional notation and musical qualities
+	respect the Weber-Fechner law, with note grids (e.g. semitones, octaves),
+	respecting the logarithm of frequency: interval$=log_2(f_1/f_0)$,
+	loudness$=log_10(p_1/p_0)$.
+	Duration seems also to be conceptualized as such
+	because musical notation uses the division in two (simple, imperfectus),
+	amd three (perfectus) yielding a grid having
+	$d_i=d_{i+1}/2$ and $d_i=d_{i+1}/3$.
+	$durations=2^{x-i}$ and $=3^{x-i}$.
+	Which implies $log_2(dur) = x-i$.
+	A Weber-Fechner compliant relation
+	between the number of the durations and
+	depth of the division x-i = (4, 8, 16) for simple,
+	(3, 9, 12) for compound,
+	(5,7,13) complex.
+	6 is compound in traditional music theory,
+	but is the only one that relates periods of 2 and 3,
+	subdivision of 2 and 3.
+
+
+
 \subsection{Other: Erdös Sectioning, KS-derived statistics, Wordnet,
 text mining, stability and differentiation, partnerships}
+Other works, such as classification of participants (vertices) as
+hubs, intermediary and periphery, statistical tests e.g. to
+observe linguistic differences among the network participants,
+the use of Wordnet and token-oriented methods for text mining,
+and current partnership with researchers in physics, computer science,
+mathematics, philosopy and social sciences, clinical and social psychology,
+give some of the support for our endeavors.
+
 \subsection{What to do?}
 We will surely integrate the Hypothesis, Goals, Interaction
 concepts into the AAVO Core.
@@ -179,28 +267,48 @@ linked data, and other initiatives or knowledge.
 
 \begin{thebibliography}{99}
 
-\bibitem{krishnan00} E. Krishnan, A. M. Shan, T. Rishi, L. A. Ajith, C. V.
-Radhakrishnan, \textit{On-line Tutorial on \LaTeX{}},
-``Mathematics'' (Indian \TeX{} Users Group, 2000), \\
-\url{http://www.tug.org/tutorials/tugindia/chap11-scr.pdf}.
+\bibitem{an}
+	Fabbri, R. What are you and I? [anthropological physics fundamentals], 2015. Available at \url{https://www.academia.edu/10356773/What\_are\_you\_and\_I\_anthropological\_physics\_fundamentals\_}
 
-\bibitem{vantrigt97} C. van Trigt, ``Visual system-response functions and estimating reflectance,''
-J. Opt. Soc. Am. A \textbf{14}, 741--755 (1997).
+\bibitem{an2}
+	Anthropological physics and social psychology in the critical research of networks. Complex Networks Digital Campus (CS-DC'15).
+	Em \\\url{http://cs-dc-15.org/papers/cognition/social-psychology/anthropological-physics-and-social-psychology-in-the-critical-research-of-networks/}
 
-\bibitem{masters93} T. Masters, \emph{Practical Neural Network Recipes in C++} (Academic, 1993).
+\bibitem{nuvem1} 
+  R.~Fabbri and M. Pisani
+  ``Analytic consideration of the society by itself,''
+  I Workshop @NUVEM, UFABC campus de Santo André,
+		Available at: \url{https://github.com/ttm/aavo/raw/master/latex/nuvem/nuvem1.pdf}.
 
-\bibitem{shoop97} B. L. Shoop, A. H. Sayles, and D. M. Litynski, ``New devices for optoelectronics: smart pixels,''
-in \emph{Handbook of Fiber Optic Data Communications},
-C. DeCusatis, D. Clement, E. Maass, and R. Lasky, eds. (Academic, 1997), pp. 705--758.
+\bibitem{tese}
+Fabbri, R. (2017). Topological stability and textual differentiation in human interaction networks:
+		statistical analysis, visualization and linked data. Doctoral thesis.
+		From \url{https://github.com/ttm/thesis/raw/master/thesis-rfabbri.pdf}
 
-\bibitem{kalman76} R. E. Kalman,``Algebraic aspects of the generalized inverse of a rectangular matrix,'' in
-\emph{Proceedings of Advanced Seminar on Generalized Inverse and Applications}, M. Z. Nashed, ed. (Academic, 1976), pp. 111--124.
+\bibitem{losd}
+	Fabbri, R., \& de Oliveira, O. N. (2016). Linked Open Social Database. Github repositories, from \url{https://github.com/ttm/linkedOpenSocialDatabase/raw/master/paper.pdf}
 
-\bibitem{craig96} R. Craig and B. Gignac, ``High-power 980-nm pump lasers,''
-in \emph{Optical Fiber Communication Conference}, Vol. 2 of 1996 OSA Technical Digest Series (Optical Society of America, 1996), paper ThG1.
+\bibitem{ont} 
+  R.~Fabbri and M. Pisani,
+  ``Enhancements of linked data expressiveness for ontologies,''
+  Anais do XX ENMC - Encontro Nacional de Modelagem Computacional e
+  VIII ECTM - Encontro de Ci\^encias e Tecnologia de Materiais, Nova Friburgo,
+  RJ - 16 a 19 Outubro 2017
+		Available at: \url{https://github.com/ttm/equanimousScalefree/raw/master/article/article.pdf}.
 
-\bibitem{steup96} D. Steup and J. Weinzierl, ``Resonant THz-meshes,''
-presented at the Fourth International Workshop on THz Electronics, Erlangen-Tennenlohe, Germany, 5--6 Sept. 1996.
+\bibitem{stab}
+Fabbri, R., Fabbri, R., Antunes, D. C., Pisani, M. M., \& de Oliveira, O. N. (2017). Temporal stability in human interaction networks. Physica A: Statistical Mechanics and its Applications.
+
+\bibitem{aavo} 
+  R.~Fabbri,
+		``Audiovisual Analytics Vocabulary and Ontology (AAVO): initial core and example expansion ,''
+  Anais do XX ENMC - Encontro Nacional de Modelagem Computacional e
+  VIII ECTM - Encontro de Ci\^encias e Tecnologia de Materiais, Nova Friburgo,
+  RJ - 16 a 19 Outubro 2017
+		Available at: \url{https://arxiv.org/abs/1710.09954}.
+
+\bibitem{tufte}
+	Tufte, E. R. (1990). Envisioning information. Graphics press.
 
 \end{thebibliography}
 
