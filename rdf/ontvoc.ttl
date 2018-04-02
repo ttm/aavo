@@ -1,0 +1,31 @@
+# this is an ontology of vocabularies, taxonomies, jargons, terminologies, etc.
+@prefix aav: <http://purl.org/audiovisualanalytics/ontvoc/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+
+aao:Ontology a owl:Class ;
+    rdfs:label "Ontology" ;
+    owl:subClassOf aao:Vocabulary .
+aao:Taxonomy a owl:Class ;
+    rdfs:label "Taxonomy" ;
+    owl:subClassOf aao:Vocabulary .
+aao:Jargon a owl:Class ;
+    rdfs:label "Jargon" ;
+    owl:subClassOf aao:Vocabulary .
+aao:Terminology a owl:Class ;
+    rdfs:label "Terminology" ;
+    owl:subClassOf aao:Vocabulary .
+aao:Formalism a owl:Class ;
+    rdfs:label "Formalism" ;
+    owl:subClassOf aao:Vocabulary .
+aao:SimpleVocabulary a owl:Class ;
+    rdfs:label "Simple Vocabulary" ;
+    rdfs:comment "e.g. SKOS" ;
+    owl:subClassOf aao:Vocabulary .
+
+aao:Imprecision a owl:Class ;
+    rdfs:label "Imprecision" .
