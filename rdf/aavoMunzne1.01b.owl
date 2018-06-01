@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+   xmlns:aao="http://purl.org/audiovisualanalytics/ontology/"
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+>
+  <rdf:Description rdf:about="http://purl.org/audiovisualanalytics/ontology/Use">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Use</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/audiovisualanalytics/ontology/VisualizationTool">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Visualization Tool</rdfs:label>
+    <aao:performs rdf:resource="http://purl.org/audiovisualanalytics/ontology/Visualization"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/audiovisualanalytics/ontology/Data">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Data</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/audiovisualanalytics/ontology/what">
+    <rdfs:label>what</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/audiovisualanalytics/ontology/has"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/audiovisualanalytics/ontology/HypothesisTesting">
+    <owl:subClassOf rdf:resource="http://purl.org/audiovisualanalytics/ontology/HypothesisHandling"/>
+    <rdfs:label>Hypothesis Testing</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/audiovisualanalytics/ontology/ComputationLimitation">
+    <owl:subClassOf rdf:resource="http://purl.org/audiovisualanalytics/ontology/Limitation"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Computation Limitation</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/audiovisualanalytics/ontology/TransitionalUse">
+    <owl:subClassOf rdf:resource="http://purl.org/audiovisualanalytics/ontology/Use"/>
+    <rdfs:label>Transitional Use</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/audiovisualanalytics/ontology/LastingUse">
+    <rdfs:label>Lasting Use</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:subClassOf rdf:resource="http://purl.org/audiovisualanalytics/ontology/Use"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/audiovisualanalytics/ontology/Visualization">
+    <rdfs:comment>aka. vis</rdfs:comment>
+    <aao:has rdf:resource="http://purl.org/audiovisualanalytics/ontology/Data"/>
+    <aao:has rdf:resource="http://purl.org/audiovisualanalytics/ontology/Goal"/>
+    <rdfs:label>Visualization</rdfs:label>
+    <aao:has rdf:resource="http://purl.org/audiovisualanalytics/ontology/Use"/>
+    <rdfs:comment>envolves discovery and enjoyment</rdfs:comment>
+    <aao:has rdf:resource="http://purl.org/audiovisualanalytics/ontology/Idiom"/>
+    <rdfs:comment>augment human capabilities</rdfs:comment>
+    <aao:has rdf:resource="http://purl.org/audiovisualanalytics/ontology/Limitation"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/audiovisualanalytics/ontology/performs">
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/audiovisualanalytics/ontology/has"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label>performs</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/audiovisualanalytics/ontology/analyses">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label>analyses</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/audiovisualanalytics/ontology/has"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/audiovisualanalytics/ontology/Idiom">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Idiom</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#subClassOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/audiovisualanalytics/ontology/HypothesisPresentation">
+    <rdfs:label>Hypothesis Presentation</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:subClassOf rdf:resource="http://purl.org/audiovisualanalytics/ontology/HypothesisHandling"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/audiovisualanalytics/ontology/HypothesisAttainment">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Hypothesis Attainment</rdfs:label>
+    <owl:subClassOf rdf:resource="http://purl.org/audiovisualanalytics/ontology/HypothesisHandling"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/audiovisualanalytics/ontology/how">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/audiovisualanalytics/ontology/has"/>
+    <rdfs:label>how</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/audiovisualanalytics/ontology/Goal">
+    <rdfs:label>Goal</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/audiovisualanalytics/ontology/HumanLimitation">
+    <rdfs:label>Human Limitation</rdfs:label>
+    <owl:subClassOf rdf:resource="http://purl.org/audiovisualanalytics/ontology/Limitation"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2000/01/rdf-schema#comment">
+    <rdfs:label>rdf schema comment</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2000/01/rdf-schema#subPropertyOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label>rdf schema sub property of</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/audiovisualanalytics/ontology/Instance">
+    <aao:why rdf:resource="http://purl.org/audiovisualanalytics/ontology/Task"/>
+    <aao:analyses rdf:resource="http://purl.org/audiovisualanalytics/ontology/VisualizationTool"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Instance</rdfs:label>
+    <aao:how rdf:resource="http://purl.org/audiovisualanalytics/ontology/Idiom"/>
+    <aao:what rdf:resource="http://purl.org/audiovisualanalytics/ontology/Data"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/audiovisualanalytics/ontology/Limitation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Limitation</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/audiovisualanalytics/ontology/has">
+    <rdfs:label>has</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/audiovisualanalytics/ontology/HypothesisHandling">
+    <rdfs:label>Hypothesis Handling</rdfs:label>
+    <owl:subClassOf rdf:resource="http://purl.org/audiovisualanalytics/ontology/LastingUse"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/audiovisualanalytics/ontology/Task">
+    <aao:has rdf:resource="http://purl.org/audiovisualanalytics/ontology/Goal"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Task</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/audiovisualanalytics/ontology/why">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label>why</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/audiovisualanalytics/ontology/has"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/audiovisualanalytics/ontology/DisplayLimitation">
+    <owl:subClassOf rdf:resource="http://purl.org/audiovisualanalytics/ontology/Limitation"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Display Limitation</rdfs:label>
+  </rdf:Description>
+</rdf:RDF>

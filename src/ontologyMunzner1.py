@@ -14,27 +14,26 @@ triples = [
         (aao.Visualization, rdfs.comment, 'aka. vis'),
 
         (aao.Visualization, aao.has, aao.Limitation),
-        (aao.HumanLimitation, a, aao.Limitation),
-        (aao.ComputationLimitation, a, aao.Limitation),
-        (aao.DisplayLimitation, a, aao.Limitation),
+        (aao.HumanLimitation, owl.subClassOf, aao.Limitation),
+        (aao.ComputationLimitation, owl.subClassOf, aao.Limitation),
+        (aao.DisplayLimitation, owl.subClassOf, aao.Limitation),
 
         (aao.Visualization, aao.has, aao.Use),
-        (aao.TransitionalUse, a, aao.Use),
-        (aao.LastingUse, a, aao.Use),
-        (aao.HypothesisHandling, a, aao.LastingUse),
-        (aao.HypothesisTesting, a, aao.HypothesisHandling),
-        (aao.HypothesisAttainment, a, aao.HypothesisHandling),
-        (aao.HypothesisPresentation, a, aao.HypothesisHandling),
-
-        (aao.performs, rdfs.subPropertyOf, aao.has),
-        (aao.VisualizationTool, aao.performs, aao.Visualization),
+        (aao.TransitionalUse, owl.subClassOf, aao.Use),
+        (aao.LastingUse, owl.subClassOf, aao.Use),
+        (aao.HypothesisHandling,     owl.subClassOf, aao.LastingUse),
+        (aao.HypothesisTesting,      owl.subClassOf, aao.HypothesisHandling),
+        (aao.HypothesisAttainment,   owl.subClassOf, aao.HypothesisHandling),
+        (aao.HypothesisPresentation, owl.subClassOf, aao.HypothesisHandling),
 
         (aao.analyses, rdfs.subPropertyOf, aao.has),
-        (aao.Instance, aao.analyses, aao.VisualizationTool),
-
+        (aao.performs, rdfs.subPropertyOf, aao.has),
         (aao.what, rdfs.subPropertyOf, aao.has),
         (aao.how, rdfs.subPropertyOf, aao.has),
         (aao.why, rdfs.subPropertyOf, aao.has),
+
+        (aao.VisualizationTool, aao.performs, aao.Visualization),
+        (aao.Instance, aao.analyses, aao.VisualizationTool),
 
         (aao.Instance, aao.what, aao.Data),
         (aao.Instance, aao.why, aao.Task),

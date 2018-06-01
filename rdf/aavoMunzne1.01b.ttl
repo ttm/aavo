@@ -1,0 +1,115 @@
+@prefix aao: <http://purl.org/audiovisualanalytics/ontology/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+aao:ComputationLimitation a owl:Class ;
+    rdfs:label "Computation Limitation" ;
+    owl:subClassOf aao:Limitation .
+
+aao:DisplayLimitation a owl:Class ;
+    rdfs:label "Display Limitation" ;
+    owl:subClassOf aao:Limitation .
+
+aao:HumanLimitation a owl:Class ;
+    rdfs:label "Human Limitation" ;
+    owl:subClassOf aao:Limitation .
+
+aao:HypothesisAttainment a owl:Class ;
+    rdfs:label "Hypothesis Attainment" ;
+    owl:subClassOf aao:HypothesisHandling .
+
+aao:HypothesisPresentation a owl:Class ;
+    rdfs:label "Hypothesis Presentation" ;
+    owl:subClassOf aao:HypothesisHandling .
+
+aao:HypothesisTesting a owl:Class ;
+    rdfs:label "Hypothesis Testing" ;
+    owl:subClassOf aao:HypothesisHandling .
+
+aao:Instance a owl:Class ;
+    rdfs:label "Instance" ;
+    aao:analyses aao:VisualizationTool ;
+    aao:how aao:Idiom ;
+    aao:what aao:Data ;
+    aao:why aao:Task .
+
+aao:TransitionalUse a owl:Class ;
+    rdfs:label "Transitional Use" ;
+    owl:subClassOf aao:Use .
+
+aao:analyses a owl:ObjectProperty ;
+    rdfs:label "analyses" ;
+    rdfs:subPropertyOf aao:has .
+
+aao:how a owl:ObjectProperty ;
+    rdfs:label "how" ;
+    rdfs:subPropertyOf aao:has .
+
+aao:performs a owl:ObjectProperty ;
+    rdfs:label "performs" ;
+    rdfs:subPropertyOf aao:has .
+
+aao:what a owl:ObjectProperty ;
+    rdfs:label "what" ;
+    rdfs:subPropertyOf aao:has .
+
+aao:why a owl:ObjectProperty ;
+    rdfs:label "why" ;
+    rdfs:subPropertyOf aao:has .
+
+rdfs:comment a owl:ObjectProperty ;
+    rdfs:label "rdf schema comment" .
+
+rdfs:subPropertyOf a owl:ObjectProperty ;
+    rdfs:label "rdf schema sub property of" .
+
+owl:subClassOf a owl:ObjectProperty .
+
+aao:LastingUse a owl:Class ;
+    rdfs:label "Lasting Use" ;
+    owl:subClassOf aao:Use .
+
+aao:Task a owl:Class ;
+    rdfs:label "Task" ;
+    aao:has aao:Goal .
+
+aao:Visualization a owl:Class ;
+    rdfs:label "Visualization" ;
+    aao:has aao:Data,
+        aao:Goal,
+        aao:Idiom,
+        aao:Limitation,
+        aao:Use ;
+    rdfs:comment "aka. vis",
+        "augment human capabilities",
+        "envolves discovery and enjoyment" .
+
+aao:VisualizationTool a owl:Class ;
+    rdfs:label "Visualization Tool" ;
+    aao:performs aao:Visualization .
+
+aao:Data a owl:Class ;
+    rdfs:label "Data" .
+
+aao:Goal a owl:Class ;
+    rdfs:label "Goal" .
+
+aao:Idiom a owl:Class ;
+    rdfs:label "Idiom" .
+
+aao:HypothesisHandling a owl:Class ;
+    rdfs:label "Hypothesis Handling" ;
+    owl:subClassOf aao:LastingUse .
+
+aao:Use a owl:Class ;
+    rdfs:label "Use" .
+
+aao:Limitation a owl:Class ;
+    rdfs:label "Limitation" .
+
+aao:has a owl:ObjectProperty ;
+    rdfs:label "has" .
+
