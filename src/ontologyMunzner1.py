@@ -9,9 +9,9 @@ aao = p.rdf.NS.aao # Audiovisual Analytics Ontology
 a =  p.rdf.NS.rdf.type
 
 triples = [
-        (aao.Visualization, rdfs.comment, 'augment human capabilities'),
-        (aao.Visualization, rdfs.comment, 'envolves discovery and enjoyment'),
-        (aao.Visualization, rdfs.comment, 'aka. vis'),
+Visualization -> 'augment human capabilities'
+              ->'envolves discovery and enjoyment'
+              ->'aka. vis'
 
         (aao.Visualization, aao.has, aao.Limitation),
         (aao.HumanLimitation, owl.subClassOf, aao.Limitation),
